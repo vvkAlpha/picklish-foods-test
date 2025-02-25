@@ -19,49 +19,49 @@ const productItems = [
     {
         id: 1,
         category: "nveg",
-        image: "/api/placeholder/400/300",
+        image: "assets/images/nveg/buff-slices-raw-meat.jpg",
         title: "Buffalo Pickle",
         description: "A bold, tangy delight featuring tender buffalo meat, aromatic spices, and rich flavors. Perfect with rice or parathas!"
     },
     {
         id: 2,
         category: "nveg",
-        image: "/api/placeholder/400/300",
+        image: "assets/images/nveg/raw-shrimps.jpg",
         title: "Prawn Pickle",
         description: "A coastal delicacy with succulent prawns, rich spices, and tangy flavors. Perfect with rice, parathas, or any meal!"
     },
     {
         id: 3,
         category: "nveg",
-        image: "/api/placeholder/400/300",
+        image: "assets/images/nveg/yellowfin-tuna.jpg",
         title: "Yellowfin Tuna Pickle",
         description: "A gourmet seafood delight with premium Yellowfin Tuna, bold spices, and tangy flavors. Perfect with rice, rotis, or any meal!"
     },
     {
         id: 4,
         category: "nveg",
-        image: "/api/placeholder/400/300",
+        image: "assets/images/nveg/white-tuna.jpg",
         title: "Tuna Pickle",
         description: "A bold seafood delight with tender tuna, rich spices, and tangy flavors. Perfect with rice, flatbreads, or any meal!"
     },
     {
         id: 5,
         category: "nveg",
-        image: "/api/placeholder/400/300",
+        image: "assets/images/nveg/chicken-breasts.jpg",
         title: "Chicken Pickle",
         description: "A savory delight with tender chicken, bold spices, and tangy flavors. Perfect with rice, parathas, or sandwiches!"
     },
     {
         id: 6,
         category: "nveg",
-        image: "/api/placeholder/400/300",
+        image: "assets/images/nveg/squid.jpg",
         title: "Squid Pickle",
         description: "A bold coastal delicacy with tender squid, rich spices, and tangy flavors. Perfect with rice, chapatis, or any meal!"
     },
     {
         id: 7,
         category: "veg",
-        image: "/api/placeholder/400/300",
+        image: "assets/images/veg/dates.jpg",
         title: "Dates Pickle",
         description: "A unique fusion of sweet dates, tangy spices, and bold flavors. Perfect with flatbreads, rice, or biriyani platters!"
     },
@@ -75,42 +75,42 @@ const productItems = [
     {
         id: 9,
         category: "veg",
-        image: "/api/placeholder/400/300",
+        image: "assets/images/veg/dates-lemon.jpg",
         title: "Lemon Pickle",
         description: "A zesty blend of fresh lemons and aromatic spices. Perfect with rice, parathas, dosas, or any meal!"
     },
     {
         id: 10,
         category: "veg",
-        image: "/api/placeholder/400/300",
+        image: "assets/images/veg/fresh-green-mango.jpg",
         title: "Cut Mango Pickle",
         description: "Tangy raw mangoes infused with bold spices. Perfect with rice, rotis, parathas, or as a zesty side!"
     },
     {
         id: 11,
         category: "veg",
-        image: "/api/placeholder/400/300",
+        image: "assets/images/veg/chilly.jpg",
         title: "Chilly Pickle",
         description: "Spicy, tangy, and bold! Made with fresh chilies and aromatic spices, perfect for adding heat to any meal."
     },
     {
         id: 12,
         category: "veg",
-        image: "/api/placeholder/400/300",
+        image: "assets/images/veg/green-gooseberries-wooden-bowl.jpg",
         title: "Gooseberry Pickle",
         description: "A tangy, spicy delight! Made with fresh gooseberries and aromatic spices, perfect for adding bold flavor to any meal."
     },
     {
         id: 13,
         category: "veg",
-        image: "/api/placeholder/400/300",
+        image: "assets/images/veg/Ivygourd.jpg",
         title: "Ivygourd Pickle",
         description: "A tangy, spicy delight! Made with fresh ivygourd and aromatic spices, perfect for adding bold flavor to any meal."
     },
     {
         id: 7,
         category: "veg",
-        image: "/api/placeholder/400/300",
+        image: "assets/images/veg/bitter-gourd.jpg",
         title: "Bittergourd Pickle",
         description: "A bold, tangy delight made with fresh bitter gourd, aromatic spices, and no artificial preservatives."
     },
