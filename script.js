@@ -1,40 +1,16 @@
 // Product data for Picklish Foods
 const products = [
     {
-        id: 1,
-        icon: "🥒",
-        title: "Classic Pickle Assortment",
-        description: "Our signature collection of traditional pickles made with time-honored recipes."
+        id: 2,
+        icon: "🟥",
+        title: "Non-Veg Pickles",
+        description: "Our non-vegetarian pickles are a celebration of robust spices, succulent textures, and mouthwatering aromas that perfectly complement your favorite meals. Whether it's tender chicken, flavorful fish, or juicy prawns, each pickle is marinated and aged to perfection, capturing the essence of time-honored techniques.\n**Why Choose Our Non-Vegetarian Pickles?**\n* **Premium Ingredients**: We use only the freshest meats and seafood, combined with high-quality spices for unmatched flavor.\n* **No Preservatives**: True to our promise, our pickles are made without synthetic preservatives, ensuring you savor natural goodness.\n* **Authentic Recipes**: Rooted in tradition, our pickles bring you the rich heritage of regional flavors.\n* **Perfect Pairing**: From rice and rotis to snacks and sides, our non-vegetarian pickles add a unique zing to any dish.\nElevate your culinary experiences with Picklish's Non-Vegetarian Pickles — a true treat for your taste buds. Dive into the world of bold flavors and bring home the magic of artisanal pickling today!"
     },
     {
         id: 2,
-        icon: "🌶️",
-        title: "Spicy Selection",
-        description: "For those who love heat, our specially crafted spicy pickle varieties that pack a punch."
-    },
-    {
-        id: 3,
-        icon: "🥕",
-        title: "Vegetable Medley",
-        description: "A colorful assortment of pickled vegetables, perfect for adding zest to any meal."
-    },
-    {
-        id: 4,
-        icon: "🍋",
-        title: "Tangy Delights",
-        description: "Bright, tangy pickles that bring a refreshing zing to your palate."
-    },
-    {
-        id: 5,
-        icon: "🧂",
-        title: "Low Sodium Options",
-        description: "Health-conscious pickle varieties with reduced salt content without sacrificing flavor."
-    },
-    {
-        id: 6,
-        icon: "🌿",
-        title: "Herbal Infusions",
-        description: "Pickles infused with aromatic herbs for a unique culinary experience."
+        icon: "🟥",
+        title: "Non-Veg Pickles",
+        description: "Our non-vegetarian pickles are a celebration of robust spices, succulent textures, and mouthwatering aromas that perfectly complement your favorite meals. Whether it's tender chicken, flavorful fish, or juicy prawns, each pickle is marinated and aged to perfection, capturing the essence of time-honored techniques.\n**Why Choose Our Non-Vegetarian Pickles?**\n* **Premium Ingredients**: We use only the freshest meats and seafood, combined with high-quality spices for unmatched flavor.\n* **No Preservatives**: True to our promise, our pickles are made without synthetic preservatives, ensuring you savor natural goodness.\n* **Authentic Recipes**: Rooted in tradition, our pickles bring you the rich heritage of regional flavors.\n* **Perfect Pairing**: From rice and rotis to snacks and sides, our non-vegetarian pickles add a unique zing to any dish.\nElevate your culinary experiences with Picklish's Non-Vegetarian Pickles — a true treat for your taste buds. Dive into the world of bold flavors and bring home the magic of artisanal pickling today!"
     }
 ];
 
@@ -42,42 +18,42 @@ const products = [
 const portfolioItems = [
     {
         id: 1,
-        category: "web", // Using "web" for veg pickles as per your HTML
+        category: "veg",
         image: "/api/placeholder/400/300",
         title: "Mango Pickle",
         description: "Sweet & tangy specialty"
     },
     {
         id: 2,
-        category: "app", // Using "app" for non-veg pickles as per your HTML
+        category: "nveg",
         image: "/api/placeholder/400/300",
         title: "Prawn Pickle",
         description: "Coastal delicacy"
     },
     {
         id: 3,
-        category: "web",
+        category: "veg",
         image: "/api/placeholder/400/300",
         title: "Lemon Pickle",
         description: "Classic tangy flavor"
     },
     {
         id: 4,
-        category: "web",
+        category: "veg",
         image: "/api/placeholder/400/300",
         title: "Mixed Vegetable Pickle",
         description: "Assorted vegetables"
     },
     {
         id: 5,
-        category: "app",
+        category: "nveg",
         image: "/api/placeholder/400/300",
         title: "Fish Pickle",
         description: "Traditional recipe"
     },
     {
         id: 6,
-        category: "web",
+        category: "veg",
         image: "/api/placeholder/400/300",
         title: "Garlic Pickle",
         description: "Bold and aromatic"
@@ -89,23 +65,30 @@ const testimonials = [
     {
         id: 1,
         image: "/api/placeholder/150/150",
-        text: "Picklish Foods' mango pickle reminds me of my grandmother's recipe. The perfect balance of spices and tanginess makes it a must-have in our kitchen.",
-        name: "Priya Sharma",
-        position: "Food Enthusiast"
+        text: "I recently tried Picklish food’s home made mango and buffalo pickles, and I have to say—they took me right back to childhood meals at my granny’s. If you’re craving that authentic, homemade pickle taste, Picklish is a must-try!",
+        name: "Muhammed Javed (MjR)",
+        position: "IT Professional"
     },
     {
         id: 2,
         image: "/api/placeholder/150/150",
-        text: "The prawn pickle is exceptional! The freshness is evident with every bite, and their on-demand preparation truly makes a difference in quality.",
-        name: "Thomas Kurian",
-        position: "Restaurant Owner"
+        text: "Delicious 😋 and the real homely taste and quality..",
+        name: "Sujith Pulpara",
+        position: "Cafe Consultant"
     },
     {
         id: 3,
         image: "/api/placeholder/150/150",
-        text: "I appreciate Picklish's commitment to no synthetic preservatives. Their mixed vegetable pickle has become a staple in our family gatherings.",
-        name: "Lakshmi Nair",
-        position: "Homecook & Blogger"
+        text: "Really loved the pickles ! 😍 such a droooooling taste!..",
+        name: "Kalavathi Swaminathan",
+        position: "Home maker"
+    },
+    {
+        id: 4,
+        image: "/api/placeholder/150/150",
+        text: "The pickle was so delicious. I ordered cut mango pickle. It was a healthy and delicious version of pickle I have ever eaten",
+        name: "Aparna P Menon",
+        position: "Chartered Accountant"
     }
 ];
 
