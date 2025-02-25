@@ -1,5 +1,4 @@
-// Sample data for services
-const services = [
+const products = [
     {
         id: 1,
         icon: "🖥️",
