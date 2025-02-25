@@ -4,13 +4,13 @@ const products = [
         id: 1,
         icon: "🟩",
         title: "Veg Pickles",
-        description: "Our vegetarian pickles celebrate the diversity of Indian cuisine, offering a range of flavors from tangy to spicy, sweet to savory. Whether it’s the classic mango pickle, the zesty lemon pickle, or the fiery chili pickle, each variety is crafted to perfection to enhance your meals and satisfy your cravings.\n <b>Why Choose Our Vegetarian Pickles?</b> \n <b>Fresh Ingredients</b>: We source the freshest vegetables, ensuring every jar is packed with natural goodness.\n <b>No Preservatives</b>: Staying true to our promise, our pickles contain no synthetic preservatives, offering you pure and wholesome flavors.\n* **Authentic Recipes**: Rooted in tradition, our pickles are crafted with time-honored methods for an unparalleled taste experience.\n* **Versatile Pairing**: From simple dal-chawal to elaborate feasts, our vegetarian pickles add a burst of flavor to every meal.\nRediscover the joy of authentic pickles with Picklish’s Vegetarian Pickles. Let us bring the timeless charm of homemade flavors straight to your table!"
+        description: "Savor the essence of tradition with our handcrafted vegetarian pickles, made from farm-fresh ingredients and authentic recipes. From tangy mango to fiery chili, each jar is packed with rich spices and nostalgic flavors. Free from preservatives and crafted with time-honored methods, our pickles are the perfect companion to any meal. Rediscover the joy of homemade goodness with Picklish!"
     },
     {
         id: 2,
         icon: "🟥",
         title: "Non-Veg Pickles",
-        description: "Our non-vegetarian pickles are a celebration of robust spices, succulent textures, and mouthwatering aromas that perfectly complement your favorite meals. Whether it's tender chicken, flavorful fish, or juicy prawns, each pickle is marinated and aged to perfection, capturing the essence of time-honored techniques.\n**Why Choose Our Non-Vegetarian Pickles?**\n* **Premium Ingredients**: We use only the freshest meats and seafood, combined with high-quality spices for unmatched flavor.\n* **No Preservatives**: True to our promise, our pickles are made without synthetic preservatives, ensuring you savor natural goodness.\n* **Authentic Recipes**: Rooted in tradition, our pickles bring you the rich heritage of regional flavors.\n* **Perfect Pairing**: From rice and rotis to snacks and sides, our non-vegetarian pickles add a unique zing to any dish.\nElevate your culinary experiences with Picklish's Non-Vegetarian Pickles — a true treat for your taste buds. Dive into the world of bold flavors and bring home the magic of artisanal pickling today!"
+        description: "Indulge in the bold, hearty flavors of our handcrafted non-vegetarian pickles, made with premium cuts of meat and seafood, infused with rich spices, and aged to perfection. Free from preservatives and rooted in tradition, each jar captures the essence of authentic regional flavors. Perfectly paired with rice, rotis, or snacks, Picklish brings you a true taste of indulgence in every bite!"
     }
 ];
 
@@ -18,74 +18,130 @@ const products = [
 const portfolioItems = [
     {
         id: 1,
-        category: "veg",
+        category: "nveg",
         image: "/api/placeholder/400/300",
-        title: "Mango Pickle",
-        description: "Sweet & tangy specialty"
+        title: "Buffalo Pickle",
+        description: "A bold, tangy delight featuring tender buffalo meat, aromatic spices, and rich flavors. Perfect with rice or parathas!"
     },
     {
         id: 2,
         category: "nveg",
         image: "/api/placeholder/400/300",
         title: "Prawn Pickle",
-        description: "Coastal delicacy"
+        description: "A coastal delicacy with succulent prawns, rich spices, and tangy flavors. Perfect with rice, parathas, or any meal!"
     },
     {
         id: 3,
-        category: "veg",
+        category: "nveg",
         image: "/api/placeholder/400/300",
-        title: "Lemon Pickle",
-        description: "Classic tangy flavor"
+        title: "Yellowfin Tuna Pickle",
+        description: "A gourmet seafood delight with premium Yellowfin Tuna, bold spices, and tangy flavors. Perfect with rice, rotis, or any meal!"
     },
     {
         id: 4,
-        category: "veg",
+        category: "nveg",
         image: "/api/placeholder/400/300",
-        title: "Mixed Vegetable Pickle",
-        description: "Assorted vegetables"
+        title: "Tuna Pickle",
+        description: "A bold seafood delight with tender tuna, rich spices, and tangy flavors. Perfect with rice, flatbreads, or any meal!"
     },
     {
         id: 5,
         category: "nveg",
         image: "/api/placeholder/400/300",
-        title: "Fish Pickle",
-        description: "Traditional recipe"
+        title: "Chicken Pickle",
+        description: "A savory delight with tender chicken, bold spices, and tangy flavors. Perfect with rice, parathas, or sandwiches!"
     },
     {
         id: 6,
+        category: "nveg",
+        image: "/api/placeholder/400/300",
+        title: "Squid Pickle",
+        description: "A bold coastal delicacy with tender squid, rich spices, and tangy flavors. Perfect with rice, chapatis, or any meal!"
+    },
+    {
+        id: 7,
         category: "veg",
         image: "/api/placeholder/400/300",
-        title: "Garlic Pickle",
-        description: "Bold and aromatic"
-    }
+        title: "Dates Pickle",
+        description: "A unique fusion of sweet dates, tangy spices, and bold flavors. Perfect with flatbreads, rice, or biriyani platters!"
+    },
+    {
+        id: 8,
+        category: "veg",
+        image: "/api/placeholder/400/300",
+        title: "Lime Dates Pickle",
+        description: "A perfect blend of tangy limes, sweet dates, and rich spices. Ideal with biryanis, parathas, or any meal!"
+    },
+    {
+        id: 9,
+        category: "veg",
+        image: "/api/placeholder/400/300",
+        title: "Lemon Pickle",
+        description: "A zesty blend of fresh lemons and aromatic spices. Perfect with rice, parathas, dosas, or any meal!"
+    },
+    {
+        id: 10,
+        category: "veg",
+        image: "/api/placeholder/400/300",
+        title: "Cut Mango Pickle",
+        description: "Tangy raw mangoes infused with bold spices. Perfect with rice, rotis, parathas, or as a zesty side!"
+    },
+    {
+        id: 11,
+        category: "veg",
+        image: "/api/placeholder/400/300",
+        title: "Chilly Pickle",
+        description: "Spicy, tangy, and bold! Made with fresh chilies and aromatic spices, perfect for adding heat to any meal."
+    },
+    {
+        id: 12,
+        category: "veg",
+        image: "/api/placeholder/400/300",
+        title: "Gooseberry Pickle",
+        description: "A tangy, spicy delight! Made with fresh gooseberries and aromatic spices, perfect for adding bold flavor to any meal."
+    },
+    {
+        id: 13,
+        category: "veg",
+        image: "/api/placeholder/400/300",
+        title: "Ivygourd Pickle",
+        description: "A tangy, spicy delight! Made with fresh ivygourd and aromatic spices, perfect for adding bold flavor to any meal."
+    },
+    {
+        id: 7,
+        category: "veg",
+        image: "/api/placeholder/400/300",
+        title: "Bittergourd Pickle",
+        description: "A bold, tangy delight made with fresh bitter gourd, aromatic spices, and no artificial preservatives."
+    },
 ];
 
-// Sample data for testimonials
+// Data for testimonials
 const testimonials = [
     {
         id: 1,
-        image: "/api/placeholder/150/150",
+        //image: "/api/placeholder/150/150",
         text: "I recently tried Picklish food’s home made mango and buffalo pickles, and I have to say—they took me right back to childhood meals at my granny’s. If you’re craving that authentic, homemade pickle taste, Picklish is a must-try!",
         name: "Muhammed Javed (MjR)",
         position: "IT Professional"
     },
     {
         id: 2,
-        image: "/api/placeholder/150/150",
+        //image: "/api/placeholder/150/150",
         text: "Delicious 😋 and the real homely taste and quality..",
         name: "Sujith Pulpara",
         position: "Cafe Consultant"
     },
     {
         id: 3,
-        image: "/api/placeholder/150/150",
+        //image: "/api/placeholder/150/150",
         text: "Really loved the pickles ! 😍 such a droooooling taste!..",
         name: "Kalavathi Swaminathan",
         position: "Home maker"
     },
     {
         id: 4,
-        image: "/api/placeholder/150/150",
+        //image: "/api/placeholder/150/150",
         text: "The pickle was so delicious. I ordered cut mango pickle. It was a healthy and delicious version of pickle I have ever eaten",
         name: "Aparna P Menon",
         position: "Chartered Accountant"
