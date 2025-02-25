@@ -121,7 +121,7 @@ const testimonials = [
     {
         id: 1,
         //image: "/api/placeholder/150/150",
-        text: "I recently tried Picklish food’s home made mango and buffalo pickles, and I have to say—they took me right back to childhood meals at my granny’s. If you’re craving that authentic, homemade pickle taste, Picklish is a must-try!",
+        text: "I recently tried Picklish food's home made mango and buffalo pickles, and I have to say—they took me right back to childhood meals at my granny’s. If you’re craving that authentic, homemade pickle taste, Picklish is a must-try!",
         name: "Muhammed Javed (MjR)",
         position: "IT Professional"
     },
@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const productsContainer = document.getElementById('products-container');
     const portfolioContainer = document.getElementById('portfolio-container');
     const testimonialContainer = document.getElementById('testimonial-container');
-    const footerServices = document.getElementById('footer-services');
+    const footerProducts = document.getElementById('footer-products');
     const filterButtons = document.querySelectorAll('.filter-button');
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
@@ -173,9 +173,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (productsContainer) {
         products.forEach(product => {
             const productCard = document.createElement('div');
-            productCard.className = 'service-card'; // Using service-card class from your CSS
+            productCard.className = 'product-card'; // Using product-card class from your CSS
             productCard.innerHTML = `
-                <div class="service-icon">${product.icon}</div>
+                <div class="product-icon">${product.icon}</div>
                 <h3>${product.title}</h3>
                 <p>${product.description}</p>
             `;
@@ -269,12 +269,12 @@ document.addEventListener('DOMContentLoaded', function() {
         testimonialContainer.style.transform = `translateX(-${index * 100}%)`;
     }
 
-    // Populate Footer Services
-    if (footerServices) {
+    // Populate Footer products
+    if (footerProducts) {
         products.forEach(product => {
             const listItem = document.createElement('li');
             listItem.innerHTML = `<a href="#products">${product.title}</a>`;
-            footerServices.appendChild(listItem);
+            footerProducts.appendChild(listItem);
         });
     }
 

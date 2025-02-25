@@ -353,13 +353,13 @@ section {
     color: var(--primary-color);
 }
 
-/* Products/Services Section */
-.services {
+/* Products Section */
+.products {
     background-color: var(--light-color);
     position: relative;
 }
 
-.services::after {
+.products::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -369,13 +369,13 @@ section {
     background: linear-gradient(to bottom, transparent, rgba(249, 247, 242, 0.5));
 }
 
-.services-grid {
+.products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 40px;
 }
 
-.service-card {
+.product-card {
     background-color: var(--light-color);
     border-radius: var(--border-radius);
     padding: 40px 30px;
@@ -387,7 +387,7 @@ section {
     z-index: 1;
 }
 
-.service-card::before {
+.product-card::before {
     content: '';
     position: absolute;
     top: 0;
@@ -399,30 +399,30 @@ section {
     transition: var(--transition-medium);
 }
 
-.service-card:hover {
+.product-card:hover {
     transform: translateY(-15px);
     box-shadow: var(--shadow-large);
     border-color: rgba(230, 126, 34, 0.3);
 }
 
-.service-card:hover::before {
+.product-card:hover::before {
     height: 100%;
 }
 
-.service-icon {
+.product-icon {
     font-size: 3rem;
     color: var(--primary-color);
     margin-bottom: 25px;
     display: inline-block;
 }
 
-.service-card h3 {
+.product-card h3 {
     font-size: 1.5rem;
     margin-bottom: 15px;
     color: var(--dark-color);
 }
 
-.service-card p {
+.product-card p {
     color: #666;
     font-size: 1rem;
     margin-bottom: 0;
@@ -1031,7 +1031,7 @@ footer::before {
         font-size: 0.9rem;
     }
     
-    .service-card {
+    .product-card {
         padding: 30px 20px;
     }
     
