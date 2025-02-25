@@ -1,10 +1,10 @@
 // Product data for Picklish Foods
 const products = [
     {
-        id: 2,
-        icon: "🟥",
-        title: "Non-Veg Pickles",
-        description: "Our non-vegetarian pickles are a celebration of robust spices, succulent textures, and mouthwatering aromas that perfectly complement your favorite meals. Whether it's tender chicken, flavorful fish, or juicy prawns, each pickle is marinated and aged to perfection, capturing the essence of time-honored techniques.\n**Why Choose Our Non-Vegetarian Pickles?**\n* **Premium Ingredients**: We use only the freshest meats and seafood, combined with high-quality spices for unmatched flavor.\n* **No Preservatives**: True to our promise, our pickles are made without synthetic preservatives, ensuring you savor natural goodness.\n* **Authentic Recipes**: Rooted in tradition, our pickles bring you the rich heritage of regional flavors.\n* **Perfect Pairing**: From rice and rotis to snacks and sides, our non-vegetarian pickles add a unique zing to any dish.\nElevate your culinary experiences with Picklish's Non-Vegetarian Pickles — a true treat for your taste buds. Dive into the world of bold flavors and bring home the magic of artisanal pickling today!"
+        id: 1,
+        icon: "🟩",
+        title: "Veg Pickles",
+        description: "Our vegetarian pickles celebrate the diversity of Indian cuisine, offering a range of flavors from tangy to spicy, sweet to savory. Whether it’s the classic mango pickle, the zesty lemon pickle, or the fiery chili pickle, each variety is crafted to perfection to enhance your meals and satisfy your cravings.\n**Why Choose Our Vegetarian Pickles?**\n* **Fresh Ingredients**: We source the freshest vegetables, ensuring every jar is packed with natural goodness.\n* **No Preservatives**: Staying true to our promise, our pickles contain no synthetic preservatives, offering you pure and wholesome flavors.\n* **Authentic Recipes**: Rooted in tradition, our pickles are crafted with time-honored methods for an unparalleled taste experience.\n* **Versatile Pairing**: From simple dal-chawal to elaborate feasts, our vegetarian pickles add a burst of flavor to every meal.\nRediscover the joy of authentic pickles with Picklish’s Vegetarian Pickles. Let us bring the timeless charm of homemade flavors straight to your table!"
     },
     {
         id: 2,
