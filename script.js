@@ -68,14 +68,14 @@ const productItems = [
     {
         id: 8,
         category: "veg",
-        image: "/api/placeholder/400/300",
+        image: "assets/images/veg/dates-lemon.jpg",
         title: "Lime Dates Pickle",
         description: "A perfect blend of tangy limes, sweet dates, and rich spices. Ideal with biryanis, parathas, or any meal!"
     },
     {
         id: 9,
         category: "veg",
-        image: "assets/images/veg/dates-lemon.jpg",
+        image: "assets/images/veg/yellow-lemons.jpg",
         title: "Lemon Pickle",
         description: "A zesty blend of fresh lemons and aromatic spices. Perfect with rice, parathas, dosas, or any meal!"
     },
