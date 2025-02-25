@@ -14,8 +14,8 @@
 //    }
 //];
 
-// Sample data for portfolio
-const portfolioItems = [
+// Data for product
+const productItems = [
     {
         id: 1,
         category: "nveg",
@@ -151,7 +151,7 @@ const testimonials = [
 // DOM Elements and Functions
 document.addEventListener('DOMContentLoaded', function() {
     const productsContainer = document.getElementById('products-container');
-    const portfolioContainer = document.getElementById('portfolio-container');
+    const productContainer = document.getElementById('product-container');
     const testimonialContainer = document.getElementById('testimonial-container');
     const footerProducts = document.getElementById('footer-products');
     const filterButtons = document.querySelectorAll('.filter-button');
@@ -183,24 +183,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Populate Portfolio
-    if (portfolioContainer) {
-        portfolioItems.forEach(item => {
-            const portfolioItem = document.createElement('div');
-            portfolioItem.className = 'portfolio-item';
-            portfolioItem.dataset.category = item.category;
-            portfolioItem.innerHTML = `
-                <img src="${item.image}" alt="${item.title}" class="portfolio-image">
-                <div class="portfolio-overlay">
+    // Populate product
+    if (productContainer) {
+        productItems.forEach(item => {
+            const productItem = document.createElement('div');
+            productItem.className = 'product-item';
+            productItem.dataset.category = item.category;
+            productItem.innerHTML = `
+                <img src="${item.image}" alt="${item.title}" class="product-image">
+                <div class="product-overlay">
                     <h3>${item.title}</h3>
                     <p>${item.description}</p>
                 </div>
             `;
-            portfolioContainer.appendChild(portfolioItem);
+            productContainer.appendChild(productItem);
         });
     }
 
-    // Portfolio Filtering
+    // product Filtering
     if (filterButtons.length > 0) {
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 button.classList.add('active');
                 
                 // Filter items
-                const items = portfolioContainer.querySelectorAll('.portfolio-item');
+                const items = productContainer.querySelectorAll('.product-item');
                 items.forEach(item => {
                     if (filter === 'all' || item.dataset.category === filter) {
                         item.style.display = 'block';
