@@ -315,3 +315,28 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const contactForm = document.getElementById("contactForm");
+
+    if (contactForm) {
+        contactForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // Get input values
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const subject = document.getElementById("subject").value;
+            const message = document.getElementById("message").value;
+            const phoneNumber = "+919447188479"; // Your WhatsApp number (with country code)
+
+            // Format the message
+            const whatsappMessage = `Hello, I'm *${name}*.\n\n📧 Email: ${email}\n📌 Subject: ${subject}\n📝 Message: ${message}`;
+
+            // Encode message for URL
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+
+            // Redirect to WhatsApp
+            window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, "_blank");
+        });
+    }
+});
