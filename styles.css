@@ -288,7 +288,7 @@ section {
     gap: 60px;
     position: relative;
     z-index: 1;
-}
+}/*
 
 .about-image {
     flex: 0 0 45%;
@@ -320,7 +320,7 @@ section {
 
 .about-image:hover img {
     transform: scale(1.05);
-}
+}*/
 
 .about-text {
     flex: 0 0 55%;
@@ -920,7 +920,7 @@ footer::before {
     
     .about-content {
         flex-direction: column;
-    }
+    }/*
     
     .about-image, .about-text {
         flex: none;
@@ -929,7 +929,7 @@ footer::before {
     
     .about-image {
         margin-bottom: 40px;
-    }
+    }*/
 }
 
 @media (max-width: 768px) {
