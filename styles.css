@@ -1140,5 +1140,5 @@ footer::before {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white; /* Adjust text color for visibility */
+    color: rgb(208, 204, 204); /* Adjust text color for visibility */
 }
