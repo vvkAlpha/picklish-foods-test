@@ -145,14 +145,14 @@ const testimonials = [
         text: "The pickle was so delicious. I ordered cut mango pickle. It was a healthy and delicious version of pickle I have ever eaten",
         name: "Aparna P Menon",
         position: "Chartered Accountant"
-    }
+    },
     {
         id: 5,
         //image: "/api/placeholder/150/150",
         text: "I've tried the cut mango, prawns, and dates pickle from Picklish, and they’re all absolutely delicious!!!  The dates pickle❤️ I loved it so much that the jar was gone in just a few days. The natural sweetness of the dates mixed with the perfect blend of tangy and spicy flavors is so addictive. If you haven’t tried date pickle yet, you’re definitely missing out!",
         name: "Manjusha TV",
         position: "IT Professional"
-    },
+    }
 ];
 
 // DOM Elements and Functions
