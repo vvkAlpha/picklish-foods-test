@@ -157,78 +157,50 @@ const testimonials = [
 
 // DOM Elements and Functions
 document.addEventListener('DOMContentLoaded', function() {
-    const productsContainer = document.getElementById('products-container');
     const productContainer = document.getElementById('product-container');
     const testimonialContainer = document.getElementById('testimonial-container');
-    const footerProducts = document.getElementById('footer-products');
     const filterButtons = document.querySelectorAll('.filter-button');
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
-    const prevArrow = document.querySelector('.arrow.prev');
-    const nextArrow = document.querySelector('.arrow.next');
-    const contactForm = document.getElementById('contactForm');
-
+    
     // Toggle mobile menu
-    if (hamburger) {
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
     }
 
     // Populate Products
-    if (productsContainer) {
-        products.forEach(product => {
-            const productCard = document.createElement('div');
-            productCard.className = 'product-card'; // Using product-card class from your CSS
-            productCard.innerHTML = `
-                <div class="product-icon">${product.icon}</div>
-                <h3>${product.title}</h3>
-                <p>${product.description}</p>
-            `;
-            productsContainer.appendChild(productCard);
-        });
-    }
-
-    // Populate product
     if (productContainer) {
+        const fragment = document.createDocumentFragment();
         productItems.forEach(item => {
             const productItem = document.createElement('div');
             productItem.className = 'product-item';
             productItem.dataset.category = item.category;
             productItem.innerHTML = `
-                <img src="${item.image}" alt="${item.title}" class="product-image">
+                <img src="${item.image}" alt="${item.title}" loading="lazy" class="product-image">
                 <div class="product-overlay">
                     <h3>${item.title}</h3>
                     <p>${item.description}</p>
                 </div>
             `;
-            productContainer.appendChild(productItem);
+            fragment.appendChild(productItem);
         });
+        productContainer.appendChild(fragment);
     }
 
-    // product Filtering
-    if (filterButtons.length > 0) {
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const filter = button.dataset.filter;
-                
-                // Update active button
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                
-                // Filter items
-                const items = productContainer.querySelectorAll('.product-item');
-                items.forEach(item => {
-                    if (filter === 'all' || item.dataset.category === filter) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
+    // Filter Products
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filter = button.dataset.filter;
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            document.querySelectorAll('.product-item').forEach(item => {
+                item.style.display = (filter === 'all' || item.dataset.category === filter) ? 'block' : 'none';
             });
         });
-    }
+    });
+
 
     // Populate Testimonials
     if (testimonialContainer) {
@@ -250,27 +222,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // Testimonial Slider
     let currentSlide = 0;
     const slides = document.querySelectorAll('.testimonial-card');
-    
-    if (slides.length > 0) {
-        // Show first slide
-        showSlide(currentSlide);
-        
-        // Next button
-        if (nextArrow) {
-            nextArrow.addEventListener('click', () => {
-                currentSlide = (currentSlide + 1) % slides.length;
-                showSlide(currentSlide);
-            });
-        }
-        
-        // Previous button
-        if (prevArrow) {
-            prevArrow.addEventListener('click', () => {
-                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-                showSlide(currentSlide);
-            });
-        }
+    function showSlide(index) {
+        requestAnimationFrame(() => {
+            testimonialContainer.style.transform = `translateX(-${index * 100}%)`;
+        });
     }
+    document.querySelector('.arrow.next').addEventListener('click', () => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    });
+    document.querySelector('.arrow.prev').addEventListener('click', () => {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+    });
+
 
     function showSlide(index) {
         testimonialContainer.style.transform = `translateX(-${index * 100}%)`;
@@ -321,7 +286,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-});
 document.addEventListener("DOMContentLoaded", function () {
     const contactForm = document.getElementById("contactForm");
 
