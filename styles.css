@@ -610,7 +610,7 @@ section {
     color: #555;
     line-height: 1.8;
 }
-
+/*
 .client-name {
     font-weight: 700;
     color: var(--primary-color);
@@ -622,7 +622,7 @@ section {
     font-size: 0.9rem;
     color: #777;
 }
-
+*/
 .slider-arrows {
     display: flex;
     justify-content: center;
