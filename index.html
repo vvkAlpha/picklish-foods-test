@@ -6,8 +6,7 @@
     <title>Picklish Foods</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
     <!-- Header -->
@@ -36,7 +35,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Welcome to Picklish Foods</h1>
-                <p>Where every jar is a labor of love and a celebration of tradition.</p>
+                <p>Where every jar is a labor of love and a celebration of tradition. At Picklish Foods, we believe in the timeless art of pickle-making, a craft that combines passion, precision, and the finest ingredients. Our mission is to deliver pickles that don't just complement your meals but elevate them to new heights of flavor and satisfaction.</p>
                 <a href="#contact" class="cta-button">Get in Touch</a>
             </div>        
         </div>
@@ -50,29 +49,48 @@
             </div>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="Picklish-sticker.jpg" alt="About Us" loading="lazy">
+                    <img src="Picklish sticker.jpg" alt="About Us">
                 </div>
                 <div class="about-text">
                     <h3>Our Story</h3>
-                    <p>More Than Pickles: Authentic, quality, and tradition. With Picklish, you’re not just buying a product—you’re tasting generations of perfection.</p>
+                    <p>More Than Pickles: We’re food lovers who value authenticity, quality, and tradition. With Picklish, you’re not just buying a product—you’re tasting generations of perfection.</p>
+                    <p><strong>No Synthetics:</strong> Our pickles are free from synthetic preservatives, ensuring pure, natural flavors with every bite.</p>
+                    <p><strong>Made just for You:</strong> Love it tangy, spicy, or mild? Customize your pickles just the way you like.</p>
+                    <p><strong>Freshly Made:</strong> No mass production here—every jar is crafted fresh on demand for ultimate flavor.</p>
+                    <p><strong>Perfectly Curated:</strong> Finest ingredients, precise spice blends—every jar is a masterpiece of taste.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Products Section -->
-    <section id="product" class="product">
+<!--    <section id="products" class="products">
         <div class="container">
             <div class="section-title">
                 <h2>Our Products</h2>
+            </div>
+            <div class="products-grid" id="products-container">
+                 Product items will be dynamically added here
+            </div>
+        </div>
+    </section>   -->
+
+    <!-- product Section -->
+    <section id="product" class="product">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our product</h2>
+                
             </div>
             <div class="product-filter">
                 <button class="filter-button active" data-filter="all">All Pickles</button>
                 <button class="filter-button" data-filter="veg">🟩 Veg Pickles</button>
                 <button class="filter-button" data-filter="nveg">🔺 Non-Veg Pickles</button>
             </div>
-            <div class="product-grid" id="product-container"></div>
-            <p>Note: Images are for representational purposes only.</p>
+            <div class="product-grid" id="product-container">
+                <!-- product items will be dynamically added here -->
+            </div>
+            <p>Note: Images are for representational purpose only.</p>
         </div>
     </section>
 
@@ -83,7 +101,9 @@
                 <h2>What Our Clients Say</h2>
             </div>
             <div class="testimonial-slider">
-                <div class="testimonial-container" id="testimonial-container"></div>
+                <div class="testimonial-container" id="testimonial-container">
+                    <!-- Testimonial items will be dynamically added here -->
+                </div>
                 <div class="slider-arrows">
                     <div class="arrow prev">←</div>
                     <div class="arrow next">→</div>
@@ -100,15 +120,43 @@
             </div>
             <div class="contact-container">
                 <div class="contact-info">
-                    <div class="contact-item"><div class="contact-icon">📞</div><p>+91-9447188479</p></div>
-                    <div class="contact-item"><div class="contact-icon">✉️</div><p>serve.picklish@gmail.com</p></div>                  
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h3>Our Location</h3>
+                            <p>Picklish Foods, Ward:IX, Bldg 118/C,<br>Vattanattu Thazham Rd, Paingarappilly PO,<br>Mulanthuruthy, Kerala, IN 682314</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <h3>Phone Number</h3>
+                            <p>+91-9447188479</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-details">
+                            <h3>Email Address</h3>
+                            <p>serve.picklish@gmail.com</p>
+                        </div>
+                    </div>                    
                 </div>
                 <div class="contact-form">
                     <form id="contactForm">
-                        <input type="text" id="name" class="form-control" placeholder="Your Name" required>
-                        <input type="email" id="email" class="form-control" placeholder="Your Email" required>
-                        <textarea id="message" class="form-control" placeholder="Your Message" required></textarea>
-                        <button type="submit" class="submit-button">Send Message</button>
+                        <div class="form-group">
+                            <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" class="form-control" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" class="form-control" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Send message</button>
                     </form>                    
                 </div>
             </div>
@@ -119,16 +167,46 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">Picklish Foods</div>
-                <p class="footer-text">Delivering pickles that elevate your meals.</p>
+                <div class="footer-about">
+                    <div class="footer-logo">Picklish Foods</div>
+                    <p class="footer-text">At Picklish, we believe in the timeless art of pickle-making, a craft that combines passion, precision, and the finest ingredients. Our mission is to deliver pickles that don't just complement your meals but elevate them to new heights of flavor and satisfaction.</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/+919447188479" class="social-icon" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://maps.app.goo.gl/cBAGfE85FkPYu86y5" class="social-icon" target="_blank">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="https://www.instagram.com/picklish_foods/" class="social-icon" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/picklish-foods/" class="social-icon" target="_blank">
+                            <i class="fab fa-linkedin-in"></i> <br>
+                        </a>
+                    </div>                
+                <div class="footer-contact">
+                    <h3 class="footer-title">Contact Info</h3>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">📍</div>
+                        <p>Picklish Foods, 118/C, Vattanattu Thazham Rd, Paingarappilly PO, Ernakulam<br>Kerala, IN 682314</p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">📞</div>
+                        <p>+91-9447188479</p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">✉️</div>
+                        <p>serve.picklish@gmail.com</p>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 Picklish Foods. All rights reserved.</p>
+            <p>&copy; 2025 Picklish Foods.</p>
         </div>
     </footer>
 
     <!-- JavaScript -->
-    <script src="script.js" defer></script>
+    <script src="script.js"></script>
 </body>
 </html>
