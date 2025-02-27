@@ -235,9 +235,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const testimonialCard = document.createElement('div');
             testimonialCard.className = 'testimonial-card';
             testimonialCard.innerHTML = `
-                <div class="client-image">
-                    <img src="${testimonial.image}" alt="${testimonial.name}">
-                </div>
                 <p class="testimonial-text">${testimonial.text}</p>
                 <h4 class="client-name">${testimonial.name}</h4>
                 <p class="client-position">${testimonial.position}</p>

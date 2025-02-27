@@ -586,7 +586,7 @@ section {
     font-family: serif;
     line-height: 1;
 }
-/*
+
 .client-image {
     width: 100px;
     height: 100px;
@@ -602,7 +602,7 @@ section {
     height: 100%;
     object-fit: cover;
 }
-*/
+
 .testimonial-text {
     font-style: italic;
     margin-bottom: 30px;
@@ -610,7 +610,7 @@ section {
     color: #555;
     line-height: 1.8;
 }
-/*
+
 .client-name {
     font-weight: 700;
     color: var(--primary-color);
@@ -622,7 +622,7 @@ section {
     font-size: 0.9rem;
     color: #777;
 }
-*/
+
 .slider-arrows {
     display: flex;
     justify-content: center;
