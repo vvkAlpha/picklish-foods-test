@@ -232,6 +232,14 @@ header.scrolled {
     max-width: 700px;
     line-height: 1.8;
 }
+.hero {
+    background: url('background.jpg') no-repeat center center/cover;
+    height: 100vh; /* Full screen height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(0, 0, 0); /* Adjust text color for visibility */
+}
 
 /* Section Styles */
 section {
@@ -1133,14 +1141,6 @@ footer::before {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-}
-.hero {
-    background: url('background.jpg') no-repeat center center/cover;
-    height: 100vh; /* Full screen height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgb(0, 0, 0); /* Adjust text color for visibility */
 }
 .social-links {
     display: flex;
