@@ -755,3 +755,377 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update date every minute
     setInterval(updateDate, 60 * 1000);
 });
+
+//Chatbot JS with WhatsApp Integration
+// FAQ Data
+const faqData = {
+    "product": [
+      {
+        "question": "What types of pickles do you sell?",
+        "answer": "We offer a variety of handcrafted pickles including dill, spicy, sweet & sour, garlic, and specialty seasonal options. All our pickles are made using traditional fermentation techniques with organic ingredients."
+      },
+      {
+        "question": "Are your products vegan?",
+        "answer": "Yes, all of our pickle products are 100% vegan. We don't use any animal-derived ingredients in our recipes."
+      },
+      {
+        "question": "Do your pickles contain allergens?",
+        "answer": "Our products are free from common allergens like nuts, dairy, eggs, and gluten. However, they do contain garlic and various spices. Each product page lists all ingredients for your reference."
+      }
+    ],
+    "pricing": [
+      {
+        "question": "How much do your pickles cost?",
+        "answer": "Our regular jars (16oz) range from $8.99 to $12.99 depending on the variety. We also offer family-size jars (32oz) from $15.99 to $22.99. Check our product pages for specific pricing and current promotions."
+      },
+      {
+        "question": "Do you offer any discounts?",
+        "answer": "Yes! We offer a 10% discount on orders above $50, and a 15% discount on orders above $75. We also have a monthly subscription service that saves you 20% on regular deliveries."
+      }
+    ],
+    "shipping": [
+      {
+        "question": "Do you ship internationally?",
+        "answer": "Currently, we only ship within the United States. We're working on expanding our shipping options to include international destinations soon."
+      },
+      {
+        "question": "How long does shipping take?",
+        "answer": "Standard shipping typically takes 3-5 business days. Expedited shipping (2-day) is available for an additional fee. Local delivery is available in select areas with same-day or next-day options."
+      },
+      {
+        "question": "What are your shipping rates?",
+        "answer": "Standard shipping is $5.99 for orders under $50, and free for orders above $50. Expedited shipping is available starting at $12.99 depending on your location."
+      }
+    ],
+    "returns": [
+      {
+        "question": "What is your return policy?",
+        "answer": "Due to the perishable nature of our products, we cannot accept returns. However, if you receive damaged products or are unsatisfied with the quality, please contact us within 7 days of delivery, and we'll be happy to issue a replacement or refund."
+      }
+    ],
+    "other": [
+      {
+        "question": "How do I store your pickles?",
+        "answer": "Our pickles should be refrigerated after opening. Unopened jars can be stored in a cool, dry place for up to 12 months. Once opened, consume within 4 weeks for optimal flavor and quality."
+      },
+      {
+        "question": "Are your products organic?",
+        "answer": "Yes, we use organic cucumbers and ingredients whenever possible. Our products are made without artificial preservatives, colors, or flavors."
+      },
+      {
+        "question": "Do you offer wholesale options?",
+        "answer": "Yes, we do offer wholesale pricing for restaurants, specialty shops, and food service businesses. Please contact us at wholesale@picklishfoods.com for more information."
+      }
+    ]
+  };
+  
+  // Suggested questions to display at the start
+  const initialSuggestions = [
+    "What types of pickles do you sell?",
+    "How much do your pickles cost?",
+    "What is your shipping policy?"
+  ];
+  
+  // Your WhatsApp business number - REPLACE THIS WITH YOUR ACTUAL NUMBER
+  const whatsappNumber = "+919447188479";
+  
+  // Initialize the chatbot when the DOM is fully loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    const chatbot = document.getElementById('chatbot');
+    const chatbotToggleBtn = document.getElementById('chatbot-toggle-btn');
+    const chatbotCloseBtn = document.getElementById('chatbot-close-btn');
+    const messagesContainer = document.getElementById('chatbot-messages');
+    const userInput = document.getElementById('user-input');
+    const sendBtn = document.getElementById('send-btn');
+    
+    // Array to store chat history
+    let chatHistory = [];
+  
+    // Toggle chatbot visibility
+    chatbotToggleBtn.addEventListener('click', function() {
+      chatbot.style.display = chatbot.style.display === 'none' || chatbot.style.display === '' ? 'flex' : 'none';
+      if (chatbot.style.display === 'flex') {
+        showSuggestedQuestions(initialSuggestions);
+        userInput.focus();
+      }
+    });
+  
+    // Close chatbot
+    chatbotCloseBtn.addEventListener('click', function() {
+      chatbot.style.display = 'none';
+    });
+  
+    // Send message when button is clicked
+    sendBtn.addEventListener('click', function() {
+      sendMessage();
+    });
+  
+    // Send message when Enter key is pressed
+    userInput.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        sendMessage();
+      }
+    });
+  
+    // Show initial suggested questions
+    showSuggestedQuestions(initialSuggestions);
+  
+    // Function to show suggested questions
+    function showSuggestedQuestions(questions) {
+      const suggestedQuestionsContainer = document.createElement('div');
+      suggestedQuestionsContainer.className = 'suggested-questions';
+      
+      questions.forEach(question => {
+        const questionChip = document.createElement('div');
+        questionChip.className = 'question-chip';
+        questionChip.textContent = question;
+        questionChip.addEventListener('click', function() {
+          userInput.value = question;
+          sendMessage();
+        });
+        suggestedQuestionsContainer.appendChild(questionChip);
+      });
+      
+      const botMessage = document.createElement('div');
+      botMessage.className = 'message bot-message';
+      botMessage.appendChild(suggestedQuestionsContainer);
+      messagesContainer.appendChild(botMessage);
+      
+      // Log initial bot welcome message to chat history
+      if (chatHistory.length === 0) {
+        chatHistory.push("Bot: Hello! I'm Picklish's virtual assistant. How can I help you today?");
+      }
+      
+      scrollToBottom();
+    }
+  
+    // Function to send message
+    function sendMessage() {
+      const message = userInput.value.trim();
+      if (message === '') return;
+  
+      // Add user message to chat
+      addMessage(message, 'user');
+      // Add to chat history
+      chatHistory.push("Customer: " + message);
+      userInput.value = '';
+  
+      // Show typing indicator
+      showTypingIndicator();
+  
+      // Process the message and get response
+      setTimeout(() => {
+        removeTypingIndicator();
+        const response = processUserMessage(message);
+        addMessage(response, 'bot');
+        // Add to chat history
+        chatHistory.push("Bot: " + response);
+  
+        // If we couldn't find a good answer, suggest human handover
+        if (response.includes("I'm not sure about that")) {
+          setTimeout(() => {
+            const handoverMsg = "Would you like to continue this conversation with a human agent on WhatsApp?";
+            addMessage(handoverMsg, 'bot');
+            chatHistory.push("Bot: " + handoverMsg);
+            
+            const handoverContainer = document.createElement('div');
+            handoverContainer.className = 'suggested-questions';
+            
+            const yesChip = document.createElement('div');
+            yesChip.className = 'question-chip';
+            yesChip.textContent = "Yes, transfer to WhatsApp";
+            yesChip.addEventListener('click', function() {
+              addMessage("Yes, transfer to WhatsApp", 'user');
+              chatHistory.push("Customer: Yes, transfer to WhatsApp");
+              setTimeout(() => {
+                const transferMsg = "Great! I'll transfer this conversation to WhatsApp where our team can assist you further.";
+                addMessage(transferMsg, 'bot');
+                chatHistory.push("Bot: " + transferMsg);
+                
+                // Display phone number input for WhatsApp
+                showPhoneNumberInput();
+              }, 500);
+            });
+            
+            const noChip = document.createElement('div');
+            noChip.className = 'question-chip';
+            noChip.textContent = "No, I'll ask something else";
+            noChip.addEventListener('click', function() {
+              addMessage("No, I'll ask something else", 'user');
+              chatHistory.push("Customer: No, I'll ask something else");
+              setTimeout(() => {
+                const continueMsg = "Sure, what else would you like to know about our products or services?";
+                addMessage(continueMsg, 'bot');
+                chatHistory.push("Bot: " + continueMsg);
+                showSuggestedQuestions(initialSuggestions);
+              }, 500);
+            });
+            
+            handoverContainer.appendChild(yesChip);
+            handoverContainer.appendChild(noChip);
+            
+            const botMessage = document.createElement('div');
+            botMessage.className = 'message bot-message';
+            botMessage.appendChild(handoverContainer);
+            messagesContainer.appendChild(botMessage);
+            scrollToBottom();
+          }, 500);
+        }
+      }, 1000);
+    }
+  
+    // Function to show phone number input for WhatsApp
+    function showPhoneNumberInput() {
+      const phoneInputContainer = document.createElement('div');
+      phoneInputContainer.className = 'message bot-message';
+      
+      const phoneInputContent = document.createElement('div');
+      phoneInputContent.className = 'message-content';
+      phoneInputContent.innerHTML = `
+        <p>Please enter your phone number to continue on WhatsApp:</p>
+        <div class="phone-input-group">
+          <input type="tel" id="phone-input" placeholder="e.g., 1234567890" class="phone-input">
+          <button id="phone-submit" class="phone-submit">Continue</button>
+        </div>
+      `;
+      
+      phoneInputContainer.appendChild(phoneInputContent);
+      messagesContainer.appendChild(phoneInputContainer);
+      scrollToBottom();
+      
+      // Add event listener to the continue button
+      setTimeout(() => {
+        const phoneInput = document.getElementById('phone-input');
+        const phoneSubmit = document.getElementById('phone-submit');
+        
+        phoneSubmit.addEventListener('click', function() {
+          const phoneNumber = phoneInput.value.trim();
+          if (phoneNumber) {
+            addMessage(`My phone number: ${phoneNumber}`, 'user');
+            chatHistory.push(`Customer phone: ${phoneNumber}`);
+            
+            // Prepare chat history for WhatsApp
+            setTimeout(() => {
+              transferToWhatsApp(phoneNumber);
+            }, 1000);
+          }
+        });
+      }, 100);
+    }
+  
+    // Function to transfer conversation to WhatsApp
+    function transferToWhatsApp(customerPhone) {
+      // Prepare chat history text
+      const chatText = formatChatHistoryForWhatsApp();
+      
+      // Create WhatsApp link with pre-filled message
+      const encodedChat = encodeURIComponent(chatText);
+      const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedChat}`;
+      
+      // Show confirmation and link
+      const confirmationMsg = document.createElement('div');
+      confirmationMsg.className = 'message bot-message';
+      
+      const confirmationContent = document.createElement('div');
+      confirmationContent.className = 'message-content';
+      confirmationContent.innerHTML = `
+        <p>Thanks! Click the button below to continue this conversation on WhatsApp:</p>
+        <a href="${whatsappLink}" target="_blank" class="whatsapp-button">
+          <i class="fab fa-whatsapp"></i> Continue on WhatsApp
+        </a>
+      `;
+      
+      confirmationMsg.appendChild(confirmationContent);
+      messagesContainer.appendChild(confirmationMsg);
+      scrollToBottom();
+    }
+  
+    // Format chat history for WhatsApp
+    function formatChatHistoryForWhatsApp() {
+      let formattedChat = "--- Chat with Picklish Foods Support ---\n\n";
+      formattedChat += chatHistory.join("\n");
+      formattedChat += "\n\n--- End of Automated Chat ---\n";
+      formattedChat += "Hello, I need assistance from a human agent. Above is my conversation with your chatbot.";
+      return formattedChat;
+    }
+  
+    // Function to add a message to the chat
+    function addMessage(message, sender) {
+      const messageElement = document.createElement('div');
+      messageElement.className = `message ${sender}-message`;
+      
+      const messageContent = document.createElement('div');
+      messageContent.className = 'message-content';
+      messageContent.textContent = message;
+      
+      messageElement.appendChild(messageContent);
+      messagesContainer.appendChild(messageElement);
+      scrollToBottom();
+    }
+  
+    // Function to show typing indicator
+    function showTypingIndicator() {
+      const typingIndicator = document.createElement('div');
+      typingIndicator.className = 'bot-typing';
+      typingIndicator.id = 'typing-indicator';
+      
+      for (let i = 0; i < 3; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'typing-dot';
+        typingIndicator.appendChild(dot);
+      }
+      
+      messagesContainer.appendChild(typingIndicator);
+      scrollToBottom();
+    }
+  
+    // Function to remove typing indicator
+    function removeTypingIndicator() {
+      const typingIndicator = document.getElementById('typing-indicator');
+      if (typingIndicator) {
+        typingIndicator.remove();
+      }
+    }
+  
+    // Function to scroll to bottom of chat
+    function scrollToBottom() {
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+  
+    // Function to process user message and get response
+    function processUserMessage(message) {
+      // Convert message to lowercase for easier matching
+      const lowerMessage = message.toLowerCase();
+      
+      // Check for greetings
+      if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage === 'hey') {
+        return "Hello! How can I help you with Picklish Foods today?";
+      }
+      
+      // Check for goodbyes
+      if (lowerMessage.includes('bye') || lowerMessage.includes('goodbye') || lowerMessage.includes('thank')) {
+        return "Thank you for chatting with us! If you have more questions, feel free to ask anytime.";
+      }
+      
+      // Check for human agent requests
+      if (lowerMessage.includes('human') || lowerMessage.includes('agent') || lowerMessage.includes('person') || lowerMessage.includes('representative') || lowerMessage.includes('whatsapp')) {
+        return "I'd be happy to transfer this conversation to WhatsApp where you can chat with a human agent. Would you like to proceed?";
+      }
+      
+      // Search through FAQ data for matching keywords
+      for (const category in faqData) {
+        for (const faq of faqData[category]) {
+          // Create an array of keywords from the question
+          const keywords = faq.question.toLowerCase().split(' ').filter(word => word.length > 3);
+          
+          // Check if any keywords match
+          if (keywords.some(keyword => lowerMessage.includes(keyword))) {
+            return faq.answer;
+          }
+        }
+      }
+      
+      // If no match is found
+      return "I'm not sure about that specific question. Would you like me to transfer you to a human agent on WhatsApp who can help you better?";
+    }
+  });
