@@ -1229,22 +1229,37 @@ footer::before {
 /* Weather Widget Container */
 .weather-widget {
     position: fixed;
-    top: 80px; /* Adjust based on your header height */
+    top: 90px; /* Adjusted to be below your header */
     right: 20px;
     width: 250px;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 252, 242, 0.9); /* Adjusted to match your site's color scheme */
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(182, 144, 87, 0.2); /* Warm shadow to match site theme */
     padding: 15px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif; /* Match your site's font */
     z-index: 999;
-    color: #333;
+    color: #3a3a3a; /* Darker text to match your site */
     backdrop-filter: blur(5px);
     transition: all 0.3s ease;
+    border: 1px solid rgba(182, 144, 87, 0.3); /* Subtle border in your site's color theme */
+    box-sizing: border-box;
 }
 
 .weather-widget:hover {
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 20px rgba(182, 144, 87, 0.3);
+}
+
+.weather-widget-handle {
+    background: rgba(255, 252, 242, 0.95);
+    border-bottom: 1px solid rgba(182, 144, 87, 0.15);
+    padding-bottom: 5px;
+}
+
+.handle-dots {
+    color: rgba(182, 144, 87, 0.7);
+    font-size: 14px;
+    letter-spacing: 2px;
+    user-select: none;
 }
 
 /* Header Section */
@@ -1274,7 +1289,7 @@ footer::before {
 }
 
 .weather-temp {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 700;
     margin-left: 10px;
 }
@@ -1292,7 +1307,7 @@ footer::before {
     font-size: 13px;
     margin-top: 15px;
     padding-top: 10px;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(182, 144, 87, 0.2);
 }
 
 .weather-detail {
@@ -1312,9 +1327,9 @@ footer::before {
 
 /* Weather Animation Elements */
 .sun {
-    background: #FFD700;
+    background: #ffb84d; /* Warmer sun color */
     border-radius: 50%;
-    box-shadow: 0 0 20px #FFD700;
+    box-shadow: 0 0 20px #ffb84d;
     width: 30px;
     height: 30px;
     position: absolute;
@@ -1353,7 +1368,7 @@ footer::before {
 .rain {
     position: absolute;
     width: 2px;
-    background: #68c3ff;
+    background: #80c4ff;
     border-radius: 2px;
     animation: rain-fall 1.5s infinite linear;
 }
@@ -1428,21 +1443,30 @@ footer::before {
 }
 
 /* Media queries for responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .weather-widget {
-        width: 200px;
-        right: 10px;
-        top: 70px;
+        width: 220px;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
     .weather-widget {
         width: 180px;
         padding: 10px;
+        padding-top: 25px;
+        font-size: 12px;
     }
     
     .weather-temp {
-        font-size: 20px;
+        font-size: 16px;
+    }
+    
+    .weather-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .detail-label {
+        font-size: 9px;
     }
 }
