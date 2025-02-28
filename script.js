@@ -376,3 +376,166 @@ if (!document.querySelector('style.whatsapp-bounce-style')) {
     `;
     document.head.appendChild(style);
 }
+
+// API key for OpenWeatherMap - Replace with your actual API key
+const API_KEY = '11aaa3b5239ed56a389edd3f1c12c3a0';
+
+// Get the current date
+function updateDate() {
+    const now = new Date();
+    const options = { weekday: 'short', month: 'short', day: 'numeric' };
+    document.querySelector('.weather-date').textContent = now.toLocaleDateString('en-US', options);
+}
+
+// Function to get user's location
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            position => {
+                fetchWeather(position.coords.latitude, position.coords.longitude);
+            },
+            error => {
+                console.error("Error getting location:", error);
+                // Default location (New York)
+                fetchWeather(40.7128, -74.0060);
+            }
+        );
+    } else {
+        console.error("Geolocation is not supported by this browser.");
+        // Default location (New York)
+        fetchWeather(40.7128, -74.0060);
+    }
+}
+
+// Function to fetch weather data from OpenWeatherMap API
+function fetchWeather(lat, lon) {
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`;
+
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            updateWeatherUI(data);
+        })
+        .catch(error => {
+            console.error("Error fetching weather data:", error);
+            document.querySelector('.weather-desc').textContent = "Failed to load weather data";
+        });
+}
+
+// Function to update the UI with weather data
+function updateWeatherUI(data) {
+    // Update location
+    document.querySelector('.weather-location').textContent = data.name;
+    
+    // Update temperature and description
+    document.querySelector('.weather-temp').textContent = `${Math.round(data.main.temp)}°C`;
+    document.querySelector('.weather-desc').textContent = data.weather[0].description;
+    
+    // Update details
+    document.getElementById('humidity').textContent = `${data.main.humidity}%`;
+    document.getElementById('wind').textContent = `${data.wind.speed} m/s`;
+    document.getElementById('feels-like').textContent = `${Math.round(data.main.feels_like)}°C`;
+    
+    // Update icon and animation based on weather condition
+    createWeatherAnimation(data.weather[0].id);
+}
+
+// Function to create weather animation based on weather condition code
+function createWeatherAnimation(weatherCode) {
+    const iconContainer = document.getElementById('weather-icon');
+    iconContainer.innerHTML = ''; // Clear previous animation
+    
+    if (weatherCode >= 200 && weatherCode < 300) {
+        // Thunderstorm
+        createClouds(iconContainer);
+        const thunder = document.createElement('div');
+        thunder.className = 'thunder';
+        iconContainer.appendChild(thunder);
+        createRaindrops(iconContainer, 5);
+    } 
+    else if (weatherCode >= 300 && weatherCode < 400) {
+        // Drizzle
+        createClouds(iconContainer);
+        createRaindrops(iconContainer, 3, true);
+    } 
+    else if (weatherCode >= 500 && weatherCode < 600) {
+        // Rain
+        createClouds(iconContainer);
+        createRaindrops(iconContainer, 6);
+    } 
+    else if (weatherCode >= 600 && weatherCode < 700) {
+        // Snow
+        createClouds(iconContainer);
+        createSnowflakes(iconContainer, 8);
+    } 
+    else if (weatherCode >= 700 && weatherCode < 800) {
+        // Atmosphere (mist, fog, etc.)
+        const mist = document.createElement('div');
+        mist.className = 'mist';
+        iconContainer.appendChild(mist);
+    } 
+    else if (weatherCode === 800) {
+        // Clear sky
+        const sun = document.createElement('div');
+        sun.className = 'sun';
+        iconContainer.appendChild(sun);
+    } 
+    else if (weatherCode > 800 && weatherCode < 900) {
+        // Clouds
+        createClouds(iconContainer);
+    }
+}
+
+// Helper function to create cloud elements
+function createClouds(container) {
+    const cloudTypes = ['cloud-1', 'cloud-2', 'cloud-3'];
+    cloudTypes.forEach(type => {
+        const cloud = document.createElement('div');
+        cloud.className = `cloud ${type}`;
+        container.appendChild(cloud);
+    });
+}
+
+// Helper function to create raindrops
+function createRaindrops(container, count, isDrizzle = false) {
+    for (let i = 0; i < count; i++) {
+        const raindrop = document.createElement('div');
+        raindrop.className = 'rain';
+        raindrop.style.height = isDrizzle ? '10px' : '15px';
+        raindrop.style.left = `${5 + (i * 8)}px`;
+        raindrop.style.top = '30px';
+        raindrop.style.animationDelay = `${i * 0.2}s`;
+        container.appendChild(raindrop);
+    }
+}
+
+// Helper function to create snowflakes
+function createSnowflakes(container, count) {
+    for (let i = 0; i < count; i++) {
+        const snowflake = document.createElement('div');
+        snowflake.className = 'snow';
+        snowflake.style.left = `${5 + (i * 5)}px`;
+        snowflake.style.top = '25px';
+        snowflake.style.animationDelay = `${i * 0.3}s`;
+        container.appendChild(snowflake);
+    }
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    updateDate();
+    getLocation();
+    
+    // Refresh weather data every 30 minutes
+    setInterval(() => {
+        getLocation();
+    }, 30 * 60 * 1000);
+    
+    // Update date every minute
+    setInterval(updateDate, 60 * 1000);
+});
