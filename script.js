@@ -794,7 +794,7 @@ const faqData = {
     "What is your shipping policy?"
   ];
   
-  // Your WhatsApp business number
+  // Your WhatsApp business number - REPLACE THIS WITH YOUR ACTUAL NUMBER
   const whatsappNumber = "+919447188479";
   
   // Initialize the chatbot when the DOM is fully loaded
@@ -813,6 +813,7 @@ const faqData = {
     chatbotToggleBtn.addEventListener('click', function() {
       chatbot.style.display = chatbot.style.display === 'none' || chatbot.style.display === '' ? 'flex' : 'none';
       if (chatbot.style.display === 'flex') {
+        showSuggestedQuestions(initialSuggestions);
         userInput.focus();
       }
     });
@@ -833,8 +834,8 @@ const faqData = {
         sendMessage();
       }
     });
-
   
+
     // Function to show suggested questions
     function showSuggestedQuestions(questions) {
       const suggestedQuestionsContainer = document.createElement('div');
