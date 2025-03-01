@@ -794,7 +794,7 @@ const faqData = {
     "What is your shipping policy?"
   ];
   
-  // Your WhatsApp business number - REPLACE THIS WITH YOUR ACTUAL NUMBER
+  // Your WhatsApp business number
   const whatsappNumber = "+919447188479";
   
   // Initialize the chatbot when the DOM is fully loaded
@@ -835,7 +835,9 @@ const faqData = {
       }
     });
   
-
+    // Show initial suggested questions
+    showSuggestedQuestions(initialSuggestions);
+  
     // Function to show suggested questions
     function showSuggestedQuestions(questions) {
       const suggestedQuestionsContainer = document.createElement('div');
@@ -859,7 +861,7 @@ const faqData = {
       
       // Log initial bot welcome message to chat history
       if (chatHistory.length === 0) {
-        chatHistory.push("Bot: Hello! I'm Picklish's virtual assistant. How can I help you today?");
+        chatHistory.push("Bot: Hello! I'm Picklish's virtual assistant. Kindly ensure that you do not share any personally identifiable information. How can I help you today?");
       }
       
       scrollToBottom();
