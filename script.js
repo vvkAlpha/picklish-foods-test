@@ -727,62 +727,63 @@ document.addEventListener('DOMContentLoaded', function() {
 // FAQ Data
 const faqData = {
     "product": [
-      {
-        "question": "What types of pickles do you sell?",
-        "answer": "We offer a variety of handcrafted pickles including dill, spicy, sweet & sour, garlic, and specialty seasonal options. All our pickles are made using traditional fermentation techniques with organic ingredients."
-      },
-      {
-        "question": "Are your products vegan?",
-        "answer": "Yes, all of our pickle products are 100% vegan. We don't use any animal-derived ingredients in our recipes."
-      },
-      {
-        "question": "Do your pickles contain allergens?",
-        "answer": "Our products are free from common allergens like nuts, dairy, eggs, and gluten. However, they do contain garlic and various spices. Each product page lists all ingredients for your reference."
-      }
-    ],
-    "pricing": [
-      {
-        "question": "How much do your pickles cost?",
-        "answer": "Our regular jars (16oz) range from $8.99 to $12.99 depending on the variety. We also offer family-size jars (32oz) from $15.99 to $22.99. Check our product pages for specific pricing and current promotions."
-      },
-      {
-        "question": "Do you offer any discounts?",
-        "answer": "Yes! We offer a 10% discount on orders above $50, and a 15% discount on orders above $75. We also have a monthly subscription service that saves you 20% on regular deliveries."
-      }
-    ],
-    "shipping": [
-      {
-        "question": "Do you ship internationally?",
-        "answer": "Currently, we only ship within the United States. We're working on expanding our shipping options to include international destinations soon."
-      },
-      {
-        "question": "How long does shipping take?",
-        "answer": "Standard shipping typically takes 3-5 business days. Expedited shipping (2-day) is available for an additional fee. Local delivery is available in select areas with same-day or next-day options."
-      },
-      {
-        "question": "What are your shipping rates?",
-        "answer": "Standard shipping is $5.99 for orders under $50, and free for orders above $50. Expedited shipping is available starting at $12.99 depending on your location."
-      }
-    ],
-    "returns": [
-      {
-        "question": "What is your return policy?",
-        "answer": "Due to the perishable nature of our products, we cannot accept returns. However, if you receive damaged products or are unsatisfied with the quality, please contact us within 7 days of delivery, and we'll be happy to issue a replacement or refund."
-      }
-    ],
-    "other": [
-      {
-        "question": "How do I store your pickles?",
-        "answer": "Our pickles should be refrigerated after opening. Unopened jars can be stored in a cool, dry place for up to 12 months. Once opened, consume within 4 weeks for optimal flavor and quality."
-      },
-      {
-        "question": "Are your products organic?",
-        "answer": "Yes, we use organic cucumbers and ingredients whenever possible. Our products are made without artificial preservatives, colors, or flavors."
-      },
-      {
-        "question": "Do you offer wholesale options?",
-        "answer": "Yes, we do offer wholesale pricing for restaurants, specialty shops, and food service businesses. Please contact us at wholesale@picklishfoods.com for more information."
-      }
+        {
+            "question": "What types of pickles do you sell?",
+            "answer": "We offer a variety of handcrafted pickles including dill, spicy, sweet & sour, garlic, and specialty seasonal options. All our pickles are made using traditional fermentation techniques with organic ingredients."
+          },
+          {
+            "question": "Are your products vegan?",
+            "answer": "All our veg pickle options are 100% vegan. We don't use any animal-derived ingredients in our veg recipes."
+          },
+          {
+            "question": "Do your pickles contain allergens?",
+            "answer": "Our products are free from common allergens like nuts, dairy, eggs, and gluten. However, they do contain garlic and various spices. For any concerns , do feel free to contact us to find an alternate."
+          }
+        ],
+        "pricing": [
+          {
+            "question": "How much do your pickles cost?",
+            "answer": "Our regular glass jars (350gm) range from ₹175 to ₹525 depending on the variety. We also offer special packing at nominal rates for international travel. Check our product pages for specific pricing and current promotions."
+          },
+          {
+            "question": "Do you offer any discounts?",
+            "answer": "Yes! We offer a 5% discount on orders above ₹1000.00/-, and a 7% discount on orders above $2000/-. We also have a monthly subscription service that saves you 10% on regular deliveries."
+          },
+          {
+            "question": "How can I purchase the monthly Subscription ?",
+            "answer": "Please do contact us via whatsapp or email for subscription."
+          }
+    
+        ],
+        "shipping": [
+          {
+            "question": "Do you ship internationally?",
+            "answer": "Currently, we only ship within the India. We're working on expanding our shipping options to include international destinations soon."
+          },
+          {
+            "question": "How long does shipping take?",
+            "answer": "Standard shipping typically takes 3-5 business days. Local delivery is available in select areas with same-day or next-day options depending on what time the order is being placed."
+          },
+          {
+            "question": "What are your shipping rates?",
+            "answer": "Standard shipping is ₹95 for orders under ₹1000/-, and free for orders above ₹1000/-. Expedited shipping is available starting at ₹115/- depending on your location."
+          }
+        ],
+        "returns": [
+          {
+            "question": "What is your return policy?",
+            "answer": "Due to the perishable nature of our products, we cannot accept returns. However, if you receive damaged products or are unsatisfied with the quality, please contact us within 2 days of delivery."
+          }
+        ],
+        "other": [
+          {
+            "question": "How do I store your pickles?",
+            "answer": "Our pickles should be refrigerated after opening. Unopened jars can be stored in a cool, dry place for up to 6 months. Once opened, consume within 4 weeks for optimal flavor and quality."
+          },
+          {
+            "question": "Do you offer wholesale options?",
+            "answer": "Yes, we do offer wholesale pricing for restaurants, specialty shops, and food service businesses. Please contact us via email or Whatsapp for more information."
+          }
     ]
   };
   
@@ -793,7 +794,7 @@ const faqData = {
     "What is your shipping policy?"
   ];
   
-  // Your WhatsApp business number - REPLACE THIS WITH YOUR ACTUAL NUMBER
+  // Your WhatsApp business number
   const whatsappNumber = "+919447188479";
   
   // Initialize the chatbot when the DOM is fully loaded
@@ -812,7 +813,6 @@ const faqData = {
     chatbotToggleBtn.addEventListener('click', function() {
       chatbot.style.display = chatbot.style.display === 'none' || chatbot.style.display === '' ? 'flex' : 'none';
       if (chatbot.style.display === 'flex') {
-        showSuggestedQuestions(initialSuggestions);
         userInput.focus();
       }
     });
@@ -833,9 +833,7 @@ const faqData = {
         sendMessage();
       }
     });
-  
-    // Show initial suggested questions
-    showSuggestedQuestions(initialSuggestions);
+
   
     // Function to show suggested questions
     function showSuggestedQuestions(questions) {
