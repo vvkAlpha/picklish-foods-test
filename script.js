@@ -1,19 +1,3 @@
-// Product data for Picklish Foods
-//const products = [
-//    {
-//        id: 1,
-//        icon: "🟩",
-//        title: "Veg Pickles",
-//        description: "Savor the essence of tradition with our handcrafted vegetarian pickles, made from farm-fresh ingredients and authentic recipes. From tangy mango to fiery chili, each jar is packed with rich spices and nostalgic flavors. Free from preservatives and crafted with time-honored methods, our pickles are the perfect companion to any meal. Rediscover the joy of homemade goodness with Picklish!"
-//    },
-//    {
-//        id: 2,
-//        icon: "🟥",
-//        title: "Non-Veg Pickles",
-//        description: "Indulge in the bold, hearty flavors of our handcrafted non-vegetarian pickles, made with premium cuts of meat and seafood, infused with rich spices, and aged to perfection. Free from preservatives and rooted in tradition, each jar captures the essence of authentic regional flavors. Perfectly paired with rice, rotis, or snacks, Picklish brings you a true taste of indulgence in every bite!"
-//    }
-//];
-
 // Data for product
 const productItems = [
     {
@@ -21,8 +5,7 @@ const productItems = [
         category: "nveg",
         image: "assets/images/nveg/buff-slices-raw-meat.jpg",
         title: "Buffalo Pickle",
-        description: "A bold, tangy delight featuring tender buffalo meat, aromatic spices, and rich flavors. Perfect with rice or parathas!",
-        knowmore: <a href="products/beef-pickle.html?id=beef-pickle"></a>
+        description: "A bold, tangy delight featuring tender buffalo meat, aromatic spices, and rich flavors. Perfect with rice or parathas!"
     },
     {
         id: 2,
