@@ -1,1 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picklish Foods - Product Details</title>
+    <link rel="stylesheet" href="../assets/css/product-page.css">
+</head>
+<body>
+    <div class="product-container">
+        <div class="product-header">
+            <a href="../index.html" class="back-link">← Back to Home</a>
+        </div>
+        
+        <div class="product-content">
+            <div class="product-image">
+                <img src="" alt="" id="productImage">
+            </div>
+            
+            <div class="product-details">
+                <h1 id="productTitle"></h1>
+                <p class="product-type" id="productType"></p>
+                
+                <div class="product-description">
+                    <h2>Description</h2>
+                    <p id="productDescription"></p>
+                </div>
+                
+                <div class="product-ingredients">
+                    <h2>Ingredients</h2>
+                    <ul id="ingredientsList"></ul>
+                </div>
+                
+                <div class="product-nutrition">
+                    <h2>Nutrition Information</h2>
+                    <table id="nutritionTable">
+                        <thead>
+                            <tr>
+                                <th>Nutrient</th>
+                                <th>Amount per 100g</th>
+                            </tr>
+                        </thead>
+                        <tbody id="nutritionBody"></tbody>
+                    </table>
+                </div>
+                
+                <div class="product-care">
+                    <h2>Storage & Care</h2>
+                    <p id="storageInstructions"></p>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <script src="../assets/js/product-page.js"></script>
+</body>
+</html>
