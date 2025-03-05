@@ -21,7 +21,8 @@ const productItems = [
         category: "nveg",
         image: "assets/images/nveg/buff-slices-raw-meat.jpg",
         title: "Buffalo Pickle",
-        description: "A bold, tangy delight featuring tender buffalo meat, aromatic spices, and rich flavors. Perfect with rice or parathas!"
+        description: "A bold, tangy delight featuring tender buffalo meat, aromatic spices, and rich flavors. Perfect with rice or parathas!",
+        knowmore: <a href="products/beef-pickle.html?id=beef-pickle"></a>
     },
     {
         id: 2,
