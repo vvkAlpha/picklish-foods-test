@@ -111,7 +111,7 @@ function renderProducts() {
     
     productCard.innerHTML = `
       <div class="product-image">
-        <img src="${product.image}" alt="${product.title}">
+        <img src="${product.image}">
       </div>
       <div class="product-details">
         <h3 class="product-title">${product.title}</h3>
