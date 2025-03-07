@@ -99,8 +99,12 @@ const productItems = [
         description: "A bold, tangy delight made with fresh bitter gourd, aromatic spices, and no artificial preservatives."
     },
 ];
+// Add click event listener to navigate to product detail page
+productCard.addEventListener('click', () => {
+  window.location.href = `product-detail.html?id=${product.id}`;
+});
 
-// Data for testimonials
+// Data for testimonials  
 const testimonials = [
     {
         id: 1,
