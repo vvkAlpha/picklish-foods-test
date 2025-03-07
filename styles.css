@@ -1657,7 +1657,7 @@ footer::before {
     }
   }
 
-/* Product Detail Page Styles */
+/* Product Detail Page Styles 
 .product-detail {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1735,4 +1735,4 @@ footer::before {
   font-size: 1.2rem;
   text-align: center;
   padding: 50px 0;
-}
+}*/
