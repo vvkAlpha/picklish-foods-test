@@ -97,12 +97,83 @@ const productItems = [
         image: "assets/images/veg/bitter-gourd.jpg",
         title: "Bittergourd Pickle",
         description: "A bold, tangy delight made with fresh bitter gourd, aromatic spices, and no artificial preservatives."
-    },
+    }
 ];
-// Add click event listener to navigate to product detail page
-productCard.addEventListener('click', () => {
-  window.location.href = `product-detail.html?id=${product.id}`;
+
+// Function to render products on the main page
+function renderProducts() {
+  const productContainer = document.getElementById('product-container');
+  
+  productItems.forEach(product => {
+    const productCard = document.createElement('div');
+    productCard.className = 'product-card';
+    productCard.dataset.productId = product.id;
+    
+    productCard.innerHTML = `
+      <div class="product-image">
+        <img src="${product.image}" alt="${product.title}">
+      </div>
+      <div class="product-details">
+        <h3 class="product-title">${product.title}</h3>
+        <p class="product-description">${product.description}</p>
+      </div>
+    `;
+    
+    // Add click event listener to navigate to product detail page
+    productCard.addEventListener('click', () => {
+      window.location.href = `product-detail.html?id=${product.id}`;
+    });
+    
+    productContainer.appendChild(productCard);
+  });
+}
+
+// Initialize the page
+document.addEventListener('DOMContentLoaded', () => {
+  // Check if we're on the main products page
+  if (document.getElementById('product-container')) {
+    renderProducts();
+  }
+  
+  // Check if we're on the product detail page
+  if (document.getElementById('product-detail-container')) {
+    // Get the product id from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = parseInt(urlParams.get('id'));
+    
+    if (productId) {
+      renderProductDetail(productId);
+    } else {
+      // Redirect back to main page if no valid product id
+      window.location.href = 'index.html';
+    }
+  }
 });
+
+// Function to render product detail page
+function renderProductDetail(productId) {
+  const productDetailContainer = document.getElementById('product-detail-container');
+  const product = productItems.find(item => item.id === productId);
+  
+  if (!product) {
+    productDetailContainer.innerHTML = '<div class="error">Product not found</div>';
+    return;
+  }
+  
+  productDetailContainer.innerHTML = `
+    <div class="product-detail">
+      <div class="product-detail-image">
+        <img src="${product.image}" alt="${product.title}">
+      </div>
+      <div class="product-detail-info">
+        <h1 class="product-detail-title">${product.title}</h1>
+        <p class="product-detail-description">${product.description}</p>
+        <div class="product-detail-category">Category: ${product.category}</div>
+        <button class="back-button" onclick="window.location.href='index.html'">Back to Products</button>
+      </div>
+    </div>
+  `;
+}
 
 // Data for testimonials  
 const testimonials = [
