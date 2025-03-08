@@ -100,12 +100,33 @@ const productItems = [
     }
 ];
 
-
+// Function to render products on the main page
+function renderProducts() {
+  const productContainer = document.getElementById('product-container');
+  
+  productItems.forEach(product => {
+    const productCard = document.createElement('div');
+    productCard.className = 'product-card';
+    productCard.dataset.productId = product.id;
+    
+    productCard.innerHTML = `
+      <div class="product-image">
+        <img src="${product.image}">
+      </div>
+      <div class="product-details">
+        <h3 class="product-title">${product.title}</h3>
+        <p class="product-description">${product.description}</p>
+      </div>
+    `;
     
     // Add click event listener to navigate to product detail page
     productCard.addEventListener('click', () => {
       window.location.href = `product-detail.html?id=${product.id}`;
     });
+    
+    productContainer.appendChild(productCard);
+  });
+}
 
 // Initialize the page
 document.addEventListener('DOMContentLoaded', () => {
