@@ -121,7 +121,7 @@ function renderProducts() {
     
     // Add click event listener to navigate to product detail page
     productCard.addEventListener('click', () => {
-      window.location.href = `products/product-detail.html?id=${product.id}`;
+      window.location.href = `product-detail.html?id=${product.id}`;
     });
     
     productContainer.appendChild(productCard);
