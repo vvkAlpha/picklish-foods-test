@@ -105,17 +105,15 @@ function renderProducts() {
   const productContainer = document.getElementById('product-container');
   
   productItems.forEach(product => {
+    // Create product card element
     const productCard = document.createElement('div');
-    productCard.className = 'product-card';
+    productCard.className = `product-card ${product.type}`;
     productCard.dataset.productId = product.id;
     
+    // Set inner HTML with just the image
     productCard.innerHTML = `
       <div class="product-image">
-        <img src="${product.image}">
-      </div>
-      <div class="product-details">
-        <h3 class="product-title">${product.title}</h3>
-        <p class="product-description">${product.description}</p>
+        <img src="${product.image}" alt="${product.title}">
       </div>
     `;
     
@@ -124,7 +122,35 @@ function renderProducts() {
       window.location.href = `product-detail.html?id=${product.id}`;
     });
     
+    // Append the card to the container
     productContainer.appendChild(productCard);
+  });
+  
+  // Add filter functionality
+  const filterButtons = document.querySelectorAll('.filter-button');
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Update active button
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+      
+      // Get filter value
+      const filterValue = button.getAttribute('data-filter');
+      
+      // Filter products
+      const productCards = document.querySelectorAll('.product-card');
+      productCards.forEach(card => {
+        if (filterValue === 'all') {
+          card.style.display = 'block';
+        } else {
+          if (card.classList.contains(filterValue)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        }
+      });
+    });
   });
 }
 
