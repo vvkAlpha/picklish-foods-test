@@ -1081,3 +1081,104 @@ const faqData = {
       return "I'm not sure about that specific question. Would you like me to transfer you to a human agent on WhatsApp who can help you better?";
     }
   });
+
+        // Function to modify product item creation to include links
+        function createProductItem(product) {
+            const productItem = document.createElement('div');
+            productItem.className = 'product-item';
+            productItem.setAttribute('data-category', product.category);
+            
+            // Create a link to the product detail page
+            const productLink = document.createElement('a');
+            productLink.href = '#product-detail';
+            productLink.setAttribute('data-product-id', product.id);
+            productLink.onclick = function() {
+                showProductDetail(product.id);
+                return true;
+            };
+            
+            // Product content inside the link
+            productLink.innerHTML = `
+                <div class="product-image">
+                    <img src="${product.image}" alt="${product.name}">
+                </div>
+                <div class="product-details">
+                    <h3>${product.name}</h3>
+                    <p>${product.description}</p>
+                    <div class="product-price">₹${product.price}</div>
+                </div>
+            `;
+            
+            productItem.appendChild(productLink);
+            return productItem;
+        }
+        
+        // Function to show product detail
+        function showProductDetail(productId) {
+            // Find the product with the given ID
+            const product = productData.find(p => p.id === productId);
+            
+            if (!product) return;
+            
+            // Hide product section and show detail section
+            document.getElementById('product').style.display = 'none';
+            const detailSection = document.getElementById('product-detail');
+            detailSection.style.display = 'block';
+            
+            // Populate product detail content
+            const detailContent = document.getElementById('product-detail-content');
+            detailContent.innerHTML = `
+                <div class="product-detail-flex">
+                    <div class="product-detail-image">
+                        <img src="${product.image}" alt="${product.name}">
+                    </div>
+                    <div class="product-detail-info">
+                        <h2>${product.name}</h2>
+                        <p class="product-detail-description">${product.description}</p>
+                        <div class="product-detail-price">₹${product.price}</div>
+                        <div class="product-detail-category">Category: ${product.category}</div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            `;
+            
+            // Scroll to the top of the page
+            window.scrollTo(0, 0);
+        }
+        
+        // Function to close product detail and return to products
+        function closeProductDetail() {
+            document.getElementById('product-detail').style.display = 'none';
+            document.getElementById('product').style.display = 'block';
+        }
+        
+        // Override the displayProducts function if it exists in your script.js
+        // This assumes your product data is stored in a variable called productData
+        // and that displayProducts is defined in your script.js
+        window.addEventListener('load', function() {
+            // Check if the original displayProducts function exists
+            if (typeof window.originalDisplayProducts !== 'function') {
+                // Store the original function if it exists
+                if (typeof displayProducts === 'function') {
+                    window.originalDisplayProducts = displayProducts;
+                    
+                    // Override the function
+                    window.displayProducts = function(products) {
+                        const container = document.getElementById('product-container');
+                        container.innerHTML = '';
+                        
+                        products.forEach(product => {
+                            const productItem = createProductItem(product);
+                            container.appendChild(productItem);
+                        });
+                    };
+                }
+            }
+            
+            // Add hash change event listener to handle back button
+            window.addEventListener('hashchange', function() {
+                if (window.location.hash === '#product') {
+                    closeProductDetail();
+                }
+            });
+        });
