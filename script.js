@@ -102,7 +102,7 @@ const productItems = [
         image: "assets/images/veg/Ivygourd.jpg",
         title: "Ivygourd Pickle",
         description: "A tangy, spicy delight! Made with fresh ivygourd and aromatic spices, perfect for adding bold flavor to any meal.",
-        details: 
+        details: "Introducing Ivygourd Pickle"
     },
     {
         id: 14,
