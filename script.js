@@ -729,7 +729,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Create anchor tag for product item
         const productLink = document.createElement('a');
-        productLink.href = 'product-detail.html?id=' + product.id;
+        productLink.href = 'product-detail.html?id=' + encodeURIComponent(product.id);
+
 
         productLink.onclick = () => showProductDetail(product.id);
         
