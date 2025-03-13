@@ -1,4 +1,9 @@
+function getProductById(id) {
+    return productItems.find(product => product.id === parseInt(id));
+}
+
 // Data for product
+
 const productItems = [
     {
         id: 1,
@@ -732,7 +737,8 @@ document.addEventListener('DOMContentLoaded', function() {
         productLink.href = 'product-detail.html?id=' + encodeURIComponent(productItem.id);
 
 
-        // productLink.onclick = () => showProductDetail(product.id);
+        productLink.onclick = () => showProductDetail(product.id);
+
 
         
         // Populate product details

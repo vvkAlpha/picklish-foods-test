@@ -20,42 +20,11 @@
     </header>
 
   <main>
-    <p>" "</p>
-    <p>" "</p>
-    <p>" "</p>
     <div class="container">
       <div id="product-detail-container">
-        <!-- Product detail will be dynamically added here -->
-        <script>
-            const urlParams = new URLSearchParams(window.location.search);
-            const productId = urlParams.get('id');
-
-            // Function to fetch product details by ID
-            function getProductById(id) {
-                // Assuming productItems is available globally
-                return productItems.find(product => product.id == id);
-            }
-
-            // Display product details
-            function displayProductDetails() {
-                const product = getProductById(productId);
-                if (product) {
-                    const productDetailContainer = document.getElementById('product-detail-container');
-                    productDetailContainer.innerHTML = `
-                        <h2>${product.title}</h2>
-                        <img src="${product.image}" alt="${product.title}">
-                        <p>${product.description}</p>
-                        <span>${product.price}</span>
-                    `;
-                } else {
-                    document.getElementById('product-detail-container').innerHTML = '<p>Product not found.</p>';
-                }
-            }
-
-            // Call the function to display product details
-            displayProductDetails();
-        </script>
-
+        <div id="product-detail">
+          <!-- Product detail will be dynamically added here -->
+        </div>
       </div>
     </div>
   </main>
@@ -76,12 +45,10 @@
                         </a>
                         <a href="https://www.instagram.com/picklish_foods/" class="social-icon" target="_blank">
                             <i class="fab fa-instagram"></i>
-                            
                         </a>
                         <a href="https://www.linkedin.com/company/picklish-foods/" class="social-icon" target="_blank">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <p>" "</p>
                     </div>                
                 <div class="footer-contact">
                     <h3 class="footer-title">Contact Info</h3>
@@ -107,5 +74,34 @@
 
     <!-- JavaScript -->
     <script src="script.js"></script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+
+        // Function to fetch product details by ID
+        function getProductById(id) {
+            // Assuming productItems is available globally
+            return productItems.find(product => product.id == id);
+        }
+
+        // Display product details
+        function displayProductDetails() {
+            const product = getProductById(productId);
+            if (product) {
+                const productDetailContainer = document.getElementById('product-detail');
+                productDetailContainer.innerHTML = `
+                    <h2>${product.title}</h2>
+                    <img src="${product.image}" alt="${product.title}">
+                    <p>${product.description}</p>
+                    <span>${product.price}</span>
+                `;
+            } else {
+                document.getElementById('product-detail').innerHTML = '<p>Product not found.</p>';
+            }
+        }
+
+        // Call the function to display product details
+        displayProductDetails();
+    </script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Picklish Foods - Test</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -14,239 +14,59 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">Picklish Foods - Test</div>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#product">Products</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <div class="hamburger">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
             </div>
         </div>
     </header>
 
-    <!-- Weather Widget -->
-    <div class="weather-widget">
-        <div class="weather-header">
-        <div class="weather-location">Loading...</div>
-        <div class="weather-date"></div>
-    </div>
-    <div class="weather-main">
-        <div class="weather-icon" id="weather-icon"></div>
-        <div class="weather-temp">--°C</div>
-    </div>
-    <div class="weather-desc">Loading weather data...</div>
-    <div class="weather-details">
-        <div class="weather-detail">
-            <span class="detail-value" id="humidity">--%</span>
-            <span class="detail-label">Humidity</span>
-        </div>
-        <div class="weather-detail">
-            <span class="detail-value" id="wind">-- m/s</span>
-            <span class="detail-label">Wind</span>
-        </div>
-        <div class="weather-detail">
-            <span class="detail-value" id="feels-like">--°C</span>
-            <span class="detail-label">Feels Like</span>
-        </div>
-    </div>
-</div>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
+    <main>
         <div class="container">
-            <div class="hero-content">
-                <h1>Welcome to Picklish Foods</h1>
-                <p>Where every jar is a labor of love and a celebration of tradition. At Picklish Foods, we believe in the timeless art of pickle-making, a craft that combines passion, precision, and the finest ingredients. Our mission is to deliver pickles that don't just complement your meals but elevate them to new heights of flavor and satisfaction.</p>
-                <a href="#contact" class="cta-button">Get in Touch</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>About Us</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="Picklish sticker.jpg" alt="About Us">
+            <div id="product-list">
+                <!-- Dynamically generated product links -->
+                <div class="product-item">
+                    <a href="product-detail.html?id=1">Beef Pickle</a>
                 </div>
-                <div class="about-text">
-                    <h3>Our Story</h3>
-                    <p>More Than Pickles: We’re food lovers who value authenticity, quality, and tradition. With Picklish, you’re not just buying a product—you’re tasting generations of perfection.</p>
-                    <p><strong>No Synthetics:</strong> Our pickles are free from synthetic preservatives, ensuring pure, natural flavors with every bite.</p>
-                    <p><strong>Made just for You:</strong> Love it tangy, spicy, or mild? Customize your pickles just the way you like.</p>
-                    <p><strong>Freshly Made:</strong> No mass production here—every jar is crafted fresh on demand for ultimate flavor.</p>
-                    <p><strong>Perfectly Curated:</strong> Finest ingredients, precise spice blends—every jar is a masterpiece of taste.</p>
+                <div class="product-item">
+                    <a href="product-detail.html?id=2">Prawn Pickle</a>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- product Section -->
-    <section id="product" class="product">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our products</h2>
-                <p>Note: Images are for representational purpose only</p>
-            </div>
-            <div class="product-filter">
-                <button class="filter-button active" data-filter="all">All Pickles</button>
-                <button class="filter-button" data-filter="Non-Veg">🔺 Non-Veg Pickles</button>
-                <button class="filter-button" data-filter="Veg">🟩 Veg Pickles</button>
-            </div>
-            <div class="product-grid" id="product-container">
-                 <!-- product items will be dynamically added here -->
-                 <a href="product-detail.html" class="product-item">
-                     <img src="assets/images/nveg/buff-slices-raw-meat.jpg" alt="Beef Pickle" class="product-image">
-                     <div class="product-overlay">
-                         <h3>Beef Pickle</h3>
-                         <p>A bold, tangy delight featuring tender buffalo meat, aromatic spices, and rich flavors. Perfect with rice or parathas!</p>
-                     </div>
-                 </a>
-                 <a href="product-detail.html" class="product-item">
-                     <img src="assets/images/nveg/raw-shrimps.jpg" alt="Prawn Pickle" class="product-image">
-                     <div class="product-overlay">
-                         <h3>Prawn Pickle</h3>
-                         <p>A coastal delicacy with succulent prawns, rich spices, and tangy flavors. Perfect with rice, parathas, or any meal!</p>
-                     </div>
-                 </a>
-                 <a href="product-detail.html" class="product-item">
-                     <img src="assets/images/nveg/yellowfin-tuna.jpg" alt="Yellowfin Tuna Pickle" class="product-image">
-                     <div class="product-overlay">
-                         <h3>Yellowfin Tuna Pickle</h3>
-                         <p>A gourmet seafood delight with premium Yellowfin Tuna, bold spices, and tangy flavors. Perfect with rice, rotis, or any meal!</p>
-                     </div>
-                 </a>
-                 <a href="product-detail.html" class="product-item">
-                     <img src="assets/images/nveg/white-tuna.jpg" alt="Tuna Pickle" class="product-image">
-                     <div class="product-overlay">
-                         <h3>Tuna Pickle</h3>
-                         <p>A bold seafood delight with tender tuna, rich spices, and tangy flavors. Perfect with rice, flatbreads, or any meal!</p>
-                     </div>
-                 </a>
-                 <a href="product-detail.html" class="product-item">
-                     <img src="assets/images/nveg/chicken-breasts.jpg" alt="Chicken Pickle" class="product-image">
-                     <div class="product-overlay">
-                         <h3>Chicken Pickle</h3>
-                         <p>A savory delight with tender chicken, bold spices, and tangy flavors. Perfect with rice, parathas, or sandwiches!</p>
-                     </div>
-                 </a>
-                 <a href="product-detail.html" class="product-item">
-                     <img src="assets/images/nveg/squid.jpg" alt="Squid Pickle" class="product-image">
-                     <div class="product-overlay">
-                         <h3>Squid Pickle</h3>
-                         <p>A bold coastal delicacy with tender squid, rich spices, and tangy flavors. Perfect with rice, chapatis, or any meal!</p>
-                     </div>
-                 </a>
-                 <a href="product-detail.html" class="product-item">
-                     <img src="assets/images/veg/dates.jpg" alt="Dates Pickle" class="product-image">
-                     <div class="product-overlay">
-                         <h3>Dates Pickle</h3>
-                         <p>A unique fusion of sweet dates, tangy spices, and bold flavors. Perfect with flatbreads, rice, or biriyani platters!</p>
-                     </div>
-                 </a>
-                 <a href="product-detail.html" class="product-item">
-                     <img src="assets/images/veg/dates-lemon.jpg" alt="Lime Dates Pickle" class="product-image">
-                     <div class="product-overlay">
-                         <h3>Lime Dates Pickle</h3>
-                         <p>A perfect blend of tangy limes, sweet dates, and rich spices. Ideal with biryanis, parathas, or any meal!</p>
-                     </div>
-                 </a>
-                 <a href="product-detail.html" class="product-item">
-                     <img src="assets/images/veg/yellow-lemons.jpg" alt="Lemon Pickle" class="product-image">
-                     <div class="product-overlay">
-                         <h3>Lemon Pickle</h3>
-                         <p>A zesty blend of fresh lemons and aromatic spices. Perfect with rice, parathas, dosas, or any meal!</p>
-                     </div>
-                 </a>
-                 <a href="product-detail.html" class="product-item">
-                     <img src="assets/images/veg/fresh-green-mango.jpg" alt="Cut Mango Pickle" class="product-image">
-                     <div class="product-overlay">
-                         <h3>Cut Mango Pickle</h3>
-                         <p>Tangy raw mangoes infused with bold spices. Perfect with rice, rotis, parathas, or as a zesty side!</p>
-                     </div>
-                 </a>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <div class="section-title">
-                <h2>What Our Clients Say</h2>
-            </div>
-            <div class="testimonial-slider">
-                <div class="testimonial-container" id="testimonial-container">
-                    <!-- Testimonial items will be dynamically added here -->
+                <div class="product-item">
+                    <a href="product-detail.html?id=3">Yellowfin Tuna Pickle</a>
                 </div>
-                <div class="slider-arrows">
-                    <div class="arrow prev">←</div>
-                    <div class="arrow next">→</div>
+                <div class="product-item">
+                    <a href="product-detail.html?id=4">Tuna Pickle</a>
+                </div>
+                <div class="product-item">
+                    <a href="product-detail.html?id=5">Chicken Pickle</a>
+                </div>
+                <div class="product-item">
+                    <a href="product-detail.html?id=6">Squid Pickle</a>
+                </div>
+                <div class="product-item">
+                    <a href="product-detail.html?id=7">Dates Pickle</a>
+                </div>
+                <div class="product-item">
+                    <a href="product-detail.html?id=8">Lime Dates Pickle</a>
+                </div>
+                <div class="product-item">
+                    <a href="product-detail.html?id=9">Lemon Pickle</a>
+                </div>
+                <div class="product-item">
+                    <a href="product-detail.html?id=10">Cut Mango Pickle</a>
+                </div>
+                <div class="product-item">
+                    <a href="product-detail.html?id=11">Chilly Pickle</a>
+                </div>
+                <div class="product-item">
+                    <a href="product-detail.html?id=12">Gooseberry Pickle</a>
+                </div>
+                <div class="product-item">
+                    <a href="product-detail.html?id=13">Ivygourd Pickle</a>
+                </div>
+                <div class="product-item">
+                    <a href="product-detail.html?id=14">Bittergourd Pickle</a>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Get In Touch</h2>
-            </div>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">📍</div>
-                        <div class="contact-details">
-                            <h3>Our Location</h3>
-                            <p>Picklish Foods, Ward:IX, Bldg 118/C,<br>Vattanattu Thazham Rd, Paingarappilly PO,<br>Mulanthuruthy, Kerala, IN 682314</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">📞</div>
-                        <div class="contact-details">
-                            <h3>Phone Number</h3>
-                            <p>+91-9447188479</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">✉️</div>
-                        <div class="contact-details">
-                            <h3>Email Address</h3>
-                            <p>serve.picklish@gmail.com</p>
-                        </div>
-                    </div>                    
-                </div>
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" id="name" class="form-control" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" class="form-control" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="subject" class="form-control" placeholder="Subject" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" class="form-control" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-button">Send message</button>
-                    </form>                    
-                </div>
-            </div>
-        </div>
-    </section>
+    </main>
 
     <!-- Footer -->
     <footer>
@@ -255,35 +75,6 @@
                 <div class="footer-about">
                     <div class="footer-logo">Picklish Foods</div>
                     <p class="footer-text">At Picklish, we believe in the timeless art of pickle-making, a craft that combines passion, precision, and the finest ingredients. Our mission is to deliver pickles that don't just complement your meals but elevate them to new heights of flavor and satisfaction.</p>
-                    <div class="social-links">
-                        <a href="https://wa.me/+919447188479" class="social-icon" target="_blank">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                        <a href="https://maps.app.goo.gl/cBAGfE85FkPYu86y5" class="social-icon" target="_blank">
-                            <i class="fab fa-google"></i>
-                        </a>
-                        <a href="https://www.instagram.com/picklish_foods/" class="social-icon" target="_blank">
-                            <i class="fab fa-instagram"></i>
-                            
-                        </a>
-                        <a href="https://www.linkedin.com/company/picklish-foods/" class="social-icon" target="_blank">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>                
-                <div class="footer-contact">
-                    <h3 class="footer-title">Contact Info</h3>
-                    <div class="footer-contact-item">
-                        <div class="footer-contact-icon">📍</div>
-                        <p>Picklish Foods, 118/C, Vattanattu Thazham Rd, Paingarappilly PO, Ernakulam<br>Kerala, IN 682314</p>
-                    </div>
-                    <div class="footer-contact-item">
-                        <div class="footer-contact-icon">📞</div>
-                        <p>+91-9447188479</p>
-                    </div>
-                    <div class="footer-contact-item">
-                        <div class="footer-contact-icon">✉️</div>
-                        <p>serve.picklish@gmail.com</p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -294,6 +85,5 @@
 
     <!-- JavaScript -->
     <script src="script.js"></script>
-  </div>
 </body>
 </html>
