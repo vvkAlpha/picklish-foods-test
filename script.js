@@ -732,7 +732,8 @@ document.addEventListener('DOMContentLoaded', function() {
         productLink.href = 'product-detail.html?id=' + encodeURIComponent(product.id);
 
 
-        productLink.onclick = () => showProductDetail(product.id);
+        // productLink.onclick = () => showProductDetail(product.id);
+
         
         // Populate product details
         productLink.innerHTML = `
