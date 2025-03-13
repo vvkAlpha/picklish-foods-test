@@ -5,98 +5,112 @@ const productItems = [
         category: "Non-Veg",
         image: "assets/images/nveg/buff-slices-raw-meat.jpg",
         title: "Beef Pickle",
-        description: "A bold and unique delicacy that brings the rich, savory flavors of the buffalo into a tantalizing, tangy pickle. This carefully crafted treat blends tender, succulent buffalo meat with a medley of aromatic spices and a zesty, tangy base, creating a flavor profile that's both fiery and satisfying. Each jar is a masterpiece of spiced goodness, delivering a delightful fusion of heat, acidity, and umami that dances on your taste buds. With every bite, you’ll experience the robust flavors of buffalo, elevated by the perfect balance of traditional Indian pickling spices."
+        description: "A bold, tangy delight featuring tender buffalo meat, aromatic spices, and rich flavors. Perfect with rice or parathas!",
+        details: "A bold and unique delicacy that brings the rich, savory flavors of the buffalo into a tantalizing, tangy pickle. This carefully crafted treat blends tender, succulent buffalo meat with a medley of aromatic spices and a zesty, tangy base, creating a flavor profile that's both fiery and satisfying. Each jar is a masterpiece of spiced goodness, delivering a delightful fusion of heat, acidity, and umami that dances on your taste buds. With every bite, you’ll experience the robust flavors of buffalo, elevated by the perfect balance of traditional Indian pickling spices."
     },
     {
         id: 2,
         category: "Non-Veg",
         image: "assets/images/nveg/raw-shrimps.jpg",
         title: "Prawn Pickle",
-        description: "Indulge in the rich and flavorful essence of the coast with our Prawns Pickle. This mouthwatering delicacy is crafted with succulent prawns, marinated in an exquisite blend of spices and traditional coastal seasonings. Each jar is brimming with tangy, spicy, and savory notes, perfectly complementing the tender prawns. Carefully prepared and preserved, this pickle is a tribute to the time-honored art of coastal cuisine."
+        description: "A coastal delicacy with succulent prawns, rich spices, and tangy flavors. Perfect with rice, parathas, or any meal!",
+        details: "Indulge in the rich and flavorful essence of the coast with our Prawns Pickle. This mouthwatering delicacy is crafted with succulent prawns, marinated in an exquisite blend of spices and traditional coastal seasonings. Each jar is brimming with tangy, spicy, and savory notes, perfectly complementing the tender prawns. Carefully prepared and preserved, this pickle is a tribute to the time-honored art of coastal cuisine."
     },
     {
         id: 3,
         category: "Non-Veg",
         image: "assets/images/nveg/yellowfin-tuna.jpg",
         title: "Yellowfin Tuna Pickle",
-        description: "A gourmet seafood delight with premium Yellowfin Tuna, bold spices, and tangy flavors. Perfect with rice, rotis, or any meal!"
+        description: "A gourmet seafood delight with premium Yellowfin Tuna, bold spices, and tangy flavors. Perfect with rice, rotis, or any meal!",
+        details: "A gourmet seafood delight with premium Yellowfin Tuna, bold spices, and tangy flavors. Perfect with rice, rotis, or any meal!"
     },
     {
         id: 4,
         category: "Non-Veg",
         image: "assets/images/nveg/white-tuna.jpg",
         title: "Tuna Pickle",
-        description: "A bold seafood delight with tender tuna, rich spices, and tangy flavors. Perfect with rice, flatbreads, or any meal!"
+        description: "A bold seafood delight with tender tuna, rich spices, and tangy flavors. Perfect with rice, flatbreads, or any meal!",
+        details: "A bold seafood delight with tender tuna, rich spices, and tangy flavors. Perfect with rice, flatbreads, or any meal!"
     },
     {
         id: 5,
         category: "Non-Veg",
         image: "assets/images/nveg/chicken-breasts.jpg",
         title: "Chicken Pickle",
-        description: "A savory delight with tender chicken, bold spices, and tangy flavors. Perfect with rice, parathas, or sandwiches!"
+        description: "A savory delight with tender chicken, bold spices, and tangy flavors. Perfect with rice, parathas, or sandwiches!",
+        details: "A savory delight with tender chicken, bold spices, and tangy flavors. Perfect with rice, parathas, or sandwiches!"
     },
     {
         id: 6,
         category: "Non-Veg",
         image: "assets/images/nveg/squid.jpg",
         title: "Squid Pickle",
-        description: "A bold coastal delicacy with tender squid, rich spices, and tangy flavors. Perfect with rice, chapatis, or any meal!"
+        description: "A bold coastal delicacy with tender squid, rich spices, and tangy flavors. Perfect with rice, chapatis, or any meal!",
+        details: "A bold coastal delicacy with tender squid, rich spices, and tangy flavors. Perfect with rice, chapatis, or any meal!"
     },
     {
         id: 7,
         category: "Veg",
         image: "assets/images/veg/dates.jpg",
         title: "Dates Pickle",
-        description: "A unique fusion of sweet dates, tangy spices, and bold flavors. Perfect with flatbreads, rice, or biriyani platters!"
+        description: "",
+        details: "A unique fusion of sweet dates, tangy spices, and bold flavors. Perfect with flatbreads, rice, or biriyani platters!"
     },
     {
         id: 8,
         category: "Veg",
         image: "assets/images/veg/dates-lemon.jpg",
         title: "Lime Dates Pickle",
-        description: "A perfect blend of tangy limes, sweet dates, and rich spices. Ideal with biryanis, parathas, or any meal!"
+        description: "",
+        details: "A perfect blend of tangy limes, sweet dates, and rich spices. Ideal with biryanis, parathas, or any meal!"
     },
     {
         id: 9,
         category: "Veg",
         image: "assets/images/veg/yellow-lemons.jpg",
         title: "Lemon Pickle",
-        description: "A zesty blend of fresh lemons and aromatic spices. Perfect with rice, parathas, dosas, or any meal!"
+        description: "",
+        details: "A zesty blend of fresh lemons and aromatic spices. Perfect with rice, parathas, dosas, or any meal!"
     },
     {
         id: 10,
         category: "Veg",
         image: "assets/images/veg/fresh-green-mango.jpg",
         title: "Cut Mango Pickle",
-        description: "Tangy raw mangoes infused with bold spices. Perfect with rice, rotis, parathas, or as a zesty side!"
+        description: "",
+        details: "Tangy raw mangoes infused with bold spices. Perfect with rice, rotis, parathas, or as a zesty side!"
     },
     {
         id: 11,
         category: "Veg",
         image: "assets/images/veg/chilly.jpg",
         title: "Chilly Pickle",
-        description: "Spicy, tangy, and bold! Made with fresh chilies and aromatic spices, perfect for adding heat to any meal."
+        description: "",
+        details: "Spicy, tangy, and bold! Made with fresh chilies and aromatic spices, perfect for adding heat to any meal."
     },
     {
         id: 12,
         category: "Veg",
         image: "assets/images/veg/green-gooseberries-wooden-bowl.jpg",
         title: "Gooseberry Pickle",
-        description: "A tangy, spicy delight! Made with fresh gooseberries and aromatic spices, perfect for adding bold flavor to any meal."
+        description: "",
+        details: "A tangy, spicy delight! Made with fresh gooseberries and aromatic spices, perfect for adding bold flavor to any meal."
     },
     {
         id: 13,
         category: "Veg",
         image: "assets/images/veg/Ivygourd.jpg",
         title: "Ivygourd Pickle",
-        description: "A tangy, spicy delight! Made with fresh ivygourd and aromatic spices, perfect for adding bold flavor to any meal."
+        description: "",
+        details: "A tangy, spicy delight! Made with fresh ivygourd and aromatic spices, perfect for adding bold flavor to any meal."
     },
     {
-        id: 7,
+        id: 14,
         category: "Veg",
         image: "assets/images/veg/bitter-gourd.jpg",
         title: "Bittergourd Pickle",
-        description: "A bold, tangy delight made with fresh bitter gourd, aromatic spices, and no artificial preservatives."
+        description: "",
+        details: "A bold, tangy delight made with fresh bitter gourd, aromatic spices, and no artificial preservatives."
     }
 ];
 
@@ -707,380 +721,6 @@ document.addEventListener('DOMContentLoaded', function() {
     setInterval(updateDate, 60 * 1000);
 });
 
-//Chatbot JS with WhatsApp Integration
-// FAQ Data
-const faqData = {
-    "product": [
-        {
-            "question": "What types of pickles do you sell?",
-            "answer": "We offer a variety of handcrafted pickles including dill, spicy, sweet & sour, garlic, and specialty seasonal options. All our pickles are made using traditional fermentation techniques with organic ingredients."
-          },
-          {
-            "question": "Are your products vegan?",
-            "answer": "All our veg pickle options are 100% vegan. We don't use any animal-derived ingredients in our veg recipes."
-          },
-          {
-            "question": "Do your pickles contain allergens?",
-            "answer": "Our products are free from common allergens like nuts, dairy, eggs, and gluten. However, they do contain garlic and various spices. For any concerns , do feel free to contact us to find an alternate."
-          }
-        ],
-        "pricing": [
-          {
-            "question": "How much do your pickles cost?",
-            "answer": "Our regular glass jars (350gm) range from ₹175 to ₹525 depending on the variety. We also offer special packing at nominal rates for international travel. Check our product pages for specific pricing and current promotions."
-          },
-          {
-            "question": "Do you offer any discounts?",
-            "answer": "Yes! We offer a 5% discount on orders above ₹1000.00/-, and a 7% discount on orders above $2000/-. We also have a monthly subscription service that saves you 10% on regular deliveries."
-          },
-          {
-            "question": "How can I purchase the monthly Subscription ?",
-            "answer": "Please do contact us via whatsapp or email for subscription."
-          }
-    
-        ],
-        "shipping": [
-          {
-            "question": "Do you ship internationally?",
-            "answer": "Currently, we only ship within the India. We're working on expanding our shipping options to include international destinations soon."
-          },
-          {
-            "question": "How long does shipping take?",
-            "answer": "Standard shipping typically takes 3-5 business days. Local delivery is available in select areas with same-day or next-day options depending on what time the order is being placed."
-          },
-          {
-            "question": "What are your shipping rates?",
-            "answer": "Standard shipping is ₹95 for orders under ₹1000/-, and free for orders above ₹1000/-. Expedited shipping is available starting at ₹115/- depending on your location."
-          }
-        ],
-        "returns": [
-          {
-            "question": "What is your return policy?",
-            "answer": "Due to the perishable nature of our products, we cannot accept returns. However, if you receive damaged products or are unsatisfied with the quality, please contact us within 2 days of delivery."
-          }
-        ],
-        "other": [
-          {
-            "question": "How do I store your pickles?",
-            "answer": "Our pickles should be refrigerated after opening. Unopened jars can be stored in a cool, dry place for up to 6 months. Once opened, consume within 4 weeks for optimal flavor and quality."
-          },
-          {
-            "question": "Do you offer wholesale options?",
-            "answer": "Yes, we do offer wholesale pricing for restaurants, specialty shops, and food service businesses. Please contact us via email or Whatsapp for more information."
-          }
-    ]
-  };
-  
-  // Suggested questions to display at the start
-  const initialSuggestions = [
-    "What types of pickles do you sell?",
-    "How much do your pickles cost?",
-    "What is your shipping policy?"
-  ];
-  
-  // Your WhatsApp business number
-  const whatsappNumber = "+919447188479";
-  
-  // Initialize the chatbot when the DOM is fully loaded
-  document.addEventListener('DOMContentLoaded', function() {
-    const chatbot = document.getElementById('chatbot');
-    const chatbotToggleBtn = document.getElementById('chatbot-toggle-btn');
-    const chatbotCloseBtn = document.getElementById('chatbot-close-btn');
-    const messagesContainer = document.getElementById('chatbot-messages');
-    const userInput = document.getElementById('user-input');
-    const sendBtn = document.getElementById('send-btn');
-    
-    // Array to store chat history
-    let chatHistory = [];
-  
-    // Toggle chatbot visibility
-    chatbotToggleBtn.addEventListener('click', function() {
-      chatbot.style.display = chatbot.style.display === 'none' || chatbot.style.display === '' ? 'flex' : 'none';
-      if (chatbot.style.display === 'flex') {
-        showSuggestedQuestions(initialSuggestions);
-        userInput.focus();
-      }
-    });
-  
-    // Close chatbot
-    chatbotCloseBtn.addEventListener('click', function() {
-      chatbot.style.display = 'none';
-    });
-  
-    // Send message when button is clicked
-    sendBtn.addEventListener('click', function() {
-      sendMessage();
-    });
-  
-    // Send message when Enter key is pressed
-    userInput.addEventListener('keypress', function(e) {
-      if (e.key === 'Enter') {
-        sendMessage();
-      }
-    });
-  
-    // Show initial suggested questions
-    showSuggestedQuestions(initialSuggestions);
-  
-    // Function to show suggested questions
-    function showSuggestedQuestions(questions) {
-      const suggestedQuestionsContainer = document.createElement('div');
-      suggestedQuestionsContainer.className = 'suggested-questions';
-      
-      questions.forEach(question => {
-        const questionChip = document.createElement('div');
-        questionChip.className = 'question-chip';
-        questionChip.textContent = question;
-        questionChip.addEventListener('click', function() {
-          userInput.value = question;
-          sendMessage();
-        });
-        suggestedQuestionsContainer.appendChild(questionChip);
-      });
-      
-      const botMessage = document.createElement('div');
-      botMessage.className = 'message bot-message';
-      botMessage.appendChild(suggestedQuestionsContainer);
-      messagesContainer.appendChild(botMessage);
-      
-      // Log initial bot welcome message to chat history
-      if (chatHistory.length === 0) {
-        chatHistory.push("Bot: Hello! I'm Picklish's virtual assistant. Kindly ensure that you do not share any personally identifiable information. How can I help you today?");
-      }
-      
-      scrollToBottom();
-    }
-  
-    // Function to send message
-    function sendMessage() {
-      const message = userInput.value.trim();
-      if (message === '') return;
-  
-      // Add user message to chat
-      addMessage(message, 'user');
-      // Add to chat history
-      chatHistory.push("Customer: " + message);
-      userInput.value = '';
-  
-      // Show typing indicator
-      showTypingIndicator();
-  
-      // Process the message and get response
-      setTimeout(() => {
-        removeTypingIndicator();
-        const response = processUserMessage(message);
-        addMessage(response, 'bot');
-        // Add to chat history
-        chatHistory.push("Bot: " + response);
-  
-        // If we couldn't find a good answer, suggest human handover
-        if (response.includes("I'm not sure about that")) {
-          setTimeout(() => {
-            const handoverMsg = "Would you like to continue this conversation with a human agent on WhatsApp?";
-            addMessage(handoverMsg, 'bot');
-            chatHistory.push("Bot: " + handoverMsg);
-            
-            const handoverContainer = document.createElement('div');
-            handoverContainer.className = 'suggested-questions';
-            
-            const yesChip = document.createElement('div');
-            yesChip.className = 'question-chip';
-            yesChip.textContent = "Yes, transfer to WhatsApp";
-            yesChip.addEventListener('click', function() {
-              addMessage("Yes, transfer to WhatsApp", 'user');
-              chatHistory.push("Customer: Yes, transfer to WhatsApp");
-              setTimeout(() => {
-                const transferMsg = "Great! I'll transfer this conversation to WhatsApp where our team can assist you further.";
-                addMessage(transferMsg, 'bot');
-                chatHistory.push("Bot: " + transferMsg);
-                
-                // Display phone number input for WhatsApp
-                showPhoneNumberInput();
-              }, 500);
-            });
-            
-            const noChip = document.createElement('div');
-            noChip.className = 'question-chip';
-            noChip.textContent = "No, I'll ask something else";
-            noChip.addEventListener('click', function() {
-              addMessage("No, I'll ask something else", 'user');
-              chatHistory.push("Customer: No, I'll ask something else");
-              setTimeout(() => {
-                const continueMsg = "Sure, what else would you like to know about our products or services?";
-                addMessage(continueMsg, 'bot');
-                chatHistory.push("Bot: " + continueMsg);
-                showSuggestedQuestions(initialSuggestions);
-              }, 500);
-            });
-            
-            handoverContainer.appendChild(yesChip);
-            handoverContainer.appendChild(noChip);
-            
-            const botMessage = document.createElement('div');
-            botMessage.className = 'message bot-message';
-            botMessage.appendChild(handoverContainer);
-            messagesContainer.appendChild(botMessage);
-            scrollToBottom();
-          }, 500);
-        }
-      }, 1000);
-    }
-  
-    // Function to show phone number input for WhatsApp
-    function showPhoneNumberInput() {
-      const phoneInputContainer = document.createElement('div');
-      phoneInputContainer.className = 'message bot-message';
-      
-      const phoneInputContent = document.createElement('div');
-      phoneInputContent.className = 'message-content';
-      phoneInputContent.innerHTML = `
-        <p>Please enter your phone number to continue on WhatsApp:</p>
-        <div class="phone-input-group">
-          <input type="tel" id="phone-input" placeholder="e.g., 1234567890" class="phone-input">
-          <button id="phone-submit" class="phone-submit">Continue</button>
-        </div>
-      `;
-      
-      phoneInputContainer.appendChild(phoneInputContent);
-      messagesContainer.appendChild(phoneInputContainer);
-      scrollToBottom();
-      
-      // Add event listener to the continue button
-      setTimeout(() => {
-        const phoneInput = document.getElementById('phone-input');
-        const phoneSubmit = document.getElementById('phone-submit');
-        
-        phoneSubmit.addEventListener('click', function() {
-          const phoneNumber = phoneInput.value.trim();
-          if (phoneNumber) {
-            addMessage(`My phone number: ${phoneNumber}`, 'user');
-            chatHistory.push(`Customer phone: ${phoneNumber}`);
-            
-            // Prepare chat history for WhatsApp
-            setTimeout(() => {
-              transferToWhatsApp(phoneNumber);
-            }, 1000);
-          }
-        });
-      }, 100);
-    }
-  
-    // Function to transfer conversation to WhatsApp
-    function transferToWhatsApp(customerPhone) {
-      // Prepare chat history text
-      const chatText = formatChatHistoryForWhatsApp();
-      
-      // Create WhatsApp link with pre-filled message
-      const encodedChat = encodeURIComponent(chatText);
-      const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedChat}`;
-      
-      // Show confirmation and link
-      const confirmationMsg = document.createElement('div');
-      confirmationMsg.className = 'message bot-message';
-      
-      const confirmationContent = document.createElement('div');
-      confirmationContent.className = 'message-content';
-      confirmationContent.innerHTML = `
-        <p>Thanks! Click the button below to continue this conversation on WhatsApp:</p>
-        <a href="${whatsappLink}" target="_blank" class="whatsapp-button">
-          <i class="fab fa-whatsapp"></i> Continue on WhatsApp
-        </a>
-      `;
-      
-      confirmationMsg.appendChild(confirmationContent);
-      messagesContainer.appendChild(confirmationMsg);
-      scrollToBottom();
-    }
-  
-    // Format chat history for WhatsApp
-    function formatChatHistoryForWhatsApp() {
-      let formattedChat = "--- Chat with Picklish Foods Support ---\n\n";
-      formattedChat += chatHistory.join("\n");
-      formattedChat += "\n\n--- End of Automated Chat ---\n";
-      formattedChat += "Hello, I need assistance from a human agent. Above is my conversation with your chatbot.";
-      return formattedChat;
-    }
-  
-    // Function to add a message to the chat
-    function addMessage(message, sender) {
-      const messageElement = document.createElement('div');
-      messageElement.className = `message ${sender}-message`;
-      
-      const messageContent = document.createElement('div');
-      messageContent.className = 'message-content';
-      messageContent.textContent = message;
-      
-      messageElement.appendChild(messageContent);
-      messagesContainer.appendChild(messageElement);
-      scrollToBottom();
-    }
-  
-    // Function to show typing indicator
-    function showTypingIndicator() {
-      const typingIndicator = document.createElement('div');
-      typingIndicator.className = 'bot-typing';
-      typingIndicator.id = 'typing-indicator';
-      
-      for (let i = 0; i < 3; i++) {
-        const dot = document.createElement('div');
-        dot.className = 'typing-dot';
-        typingIndicator.appendChild(dot);
-      }
-      
-      messagesContainer.appendChild(typingIndicator);
-      scrollToBottom();
-    }
-  
-    // Function to remove typing indicator
-    function removeTypingIndicator() {
-      const typingIndicator = document.getElementById('typing-indicator');
-      if (typingIndicator) {
-        typingIndicator.remove();
-      }
-    }
-  
-    // Function to scroll to bottom of chat
-    function scrollToBottom() {
-      messagesContainer.scrollTop = messagesContainer.scrollHeight;
-    }
-  
-    // Function to process user message and get response
-    function processUserMessage(message) {
-      // Convert message to lowercase for easier matching
-      const lowerMessage = message.toLowerCase();
-      
-      // Check for greetings
-      if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage === 'hey') {
-        return "Hello! How can I help you with Picklish Foods today?";
-      }
-      
-      // Check for goodbyes
-      if (lowerMessage.includes('bye') || lowerMessage.includes('goodbye') || lowerMessage.includes('thank')) {
-        return "Thank you for chatting with us! If you have more questions, feel free to ask anytime.";
-      }
-      
-      // Check for human agent requests
-      if (lowerMessage.includes('human') || lowerMessage.includes('agent') || lowerMessage.includes('person') || lowerMessage.includes('representative') || lowerMessage.includes('whatsapp')) {
-        return "I'd be happy to transfer this conversation to WhatsApp where you can chat with a human agent. Would you like to proceed?";
-      }
-      
-      // Search through FAQ data for matching keywords
-      for (const category in faqData) {
-        for (const faq of faqData[category]) {
-          // Create an array of keywords from the question
-          const keywords = faq.question.toLowerCase().split(' ').filter(word => word.length > 3);
-          
-          // Check if any keywords match
-          if (keywords.some(keyword => lowerMessage.includes(keyword))) {
-            return faq.answer;
-          }
-        }
-      }
-      
-      // If no match is found
-      return "I'm not sure about that specific question. Would you like me to transfer you to a human agent on WhatsApp who can help you better?";
-    }
-  });
   function createProductItems(products) {
     const productContainer = document.getElementById('product-list');
     products.forEach(product => {
