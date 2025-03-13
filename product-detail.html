@@ -26,6 +26,36 @@
     <div class="container">
       <div id="product-detail-container">
         <!-- Product detail will be dynamically added here -->
+        <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+
+            // Function to fetch product details by ID
+            function getProductById(id) {
+                // Assuming productItems is available globally
+                return productItems.find(product => product.id == id);
+            }
+
+            // Display product details
+            function displayProductDetails() {
+                const product = getProductById(productId);
+                if (product) {
+                    const productDetailContainer = document.getElementById('product-detail-container');
+                    productDetailContainer.innerHTML = `
+                        <h2>${product.title}</h2>
+                        <img src="${product.image}" alt="${product.title}">
+                        <p>${product.description}</p>
+                        <span>${product.price}</span>
+                    `;
+                } else {
+                    document.getElementById('product-detail-container').innerHTML = '<p>Product not found.</p>';
+                }
+            }
+
+            // Call the function to display product details
+            displayProductDetails();
+        </script>
+
       </div>
     </div>
   </main>
