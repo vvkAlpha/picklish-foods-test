@@ -1,125 +1,150 @@
-function getProductById(id) {
-    return productItems.find(product => product.id === parseInt(id));
-}
+// Product data for Picklish Foods
+//const products = [
+//    {
+//        id: 1,
+//        icon: "🟩",
+//        title: "Veg Pickles",
+//        description: "Savor the essence of tradition with our handcrafted vegetarian pickles, made from farm-fresh ingredients and authentic recipes. From tangy mango to fiery chili, each jar is packed with rich spices and nostalgic flavors. Free from preservatives and crafted with time-honored methods, our pickles are the perfect companion to any meal. Rediscover the joy of homemade goodness with Picklish!"
+//    },
+//    {
+//        id: 2,
+//        icon: "🟥",
+//        title: "Non-Veg Pickles",
+//        description: "Indulge in the bold, hearty flavors of our handcrafted non-vegetarian pickles, made with premium cuts of meat and seafood, infused with rich spices, and aged to perfection. Free from preservatives and rooted in tradition, each jar captures the essence of authentic regional flavors. Perfectly paired with rice, rotis, or snacks, Picklish brings you a true taste of indulgence in every bite!"
+//    }
+//];
 
 // Data for product
-
 const productItems = [
     {
         id: 1,
-        category: "Non-Veg",
+        category: "nveg",
         image: "assets/images/nveg/buff-slices-raw-meat.jpg",
-        title: "Beef Pickle",
-        description: "A bold, tangy delight featuring tender buffalo meat, aromatic spices, and rich flavors. Perfect with rice or parathas!",
-        details: "A bold and unique delicacy that brings the rich, savory flavors of the buffalo into a tantalizing, tangy pickle. This carefully crafted treat blends tender, succulent buffalo meat with a medley of aromatic spices and a zesty, tangy base, creating a flavor profile that's both fiery and satisfying. Each jar is a masterpiece of spiced goodness, delivering a delightful fusion of heat, acidity, and umami that dances on your taste buds. With every bite, you’ll experience the robust flavors of buffalo, elevated by the perfect balance of traditional Indian pickling spices."
+        title: "Buffalo Pickle",
+        description: "A bold, tangy delight featuring tender buffalo meat, aromatic spices, and rich flavors. Perfect with rice or parathas!"
     },
     {
         id: 2,
-        category: "Non-Veg",
+        category: "nveg",
         image: "assets/images/nveg/raw-shrimps.jpg",
         title: "Prawn Pickle",
-        description: "A coastal delicacy with succulent prawns, rich spices, and tangy flavors. Perfect with rice, parathas, or any meal!",
-        details: "Indulge in the rich and flavorful essence of the coast with our Prawns Pickle. This mouthwatering delicacy is crafted with succulent prawns, marinated in an exquisite blend of spices and traditional coastal seasonings. Each jar is brimming with tangy, spicy, and savory notes, perfectly complementing the tender prawns. Carefully prepared and preserved, this pickle is a tribute to the time-honored art of coastal cuisine."
-     },
+        description: "A coastal delicacy with succulent prawns, rich spices, and tangy flavors. Perfect with rice, parathas, or any meal!"
+    },
     {
         id: 3,
-        category: "Non-Veg",
+        category: "nveg",
         image: "assets/images/nveg/yellowfin-tuna.jpg",
         title: "Yellowfin Tuna Pickle",
-        description: "A gourmet seafood delight with premium Yellowfin Tuna, bold spices, and tangy flavors. Perfect with rice, rotis, or any meal!",
-        details: "Delight in the exquisite flavors of the sea with our Yellowfin Tuna Pickle, a luxurious seafood treat crafted with care. Using premium cuts of fresh yellowfin tuna, marinated in a rich blend of spices, this pickle captures the essence of traditional coastal cuisine. Every jar is a harmonious blend of bold, tangy, and spicy notes, perfectly complementing the tender, flaky texture of tuna. Naturally preserved and meticulously prepared, this pickle is a must-have for seafood enthusiasts seeking an authentic taste experience."
+        description: "A gourmet seafood delight with premium Yellowfin Tuna, bold spices, and tangy flavors. Perfect with rice, rotis, or any meal!"
     },
     {
         id: 4,
-        category: "Non-Veg",
+        category: "nveg",
         image: "assets/images/nveg/white-tuna.jpg",
         title: "Tuna Pickle",
-        description: "A bold seafood delight with tender tuna, rich spices, and tangy flavors. Perfect with rice, flatbreads, or any meal!",
-        details: "Savor the bold and rich flavors of the ocean with our Tuna Pickle, a seafood delicacy made with tender chunks of tuna and a blend of traditional spices. Perfectly marinated and naturally preserved, this pickle offers a taste of authentic coastal heritage. Each bite is a delightful fusion of tangy, spicy, and savory notes, bringing out the unique flavor and flaky texture of tuna. Crafted with care and free from synthetic additives, this pickle is an ideal choice for those who love the ocean’s finest."
+        description: "A bold seafood delight with tender tuna, rich spices, and tangy flavors. Perfect with rice, flatbreads, or any meal!"
     },
     {
         id: 5,
-        category: "Non-Veg",
+        category: "nveg",
         image: "assets/images/nveg/chicken-breasts.jpg",
         title: "Chicken Pickle",
-        description: "A savory delight with tender chicken, bold spices, and tangy flavors. Perfect with rice, parathas, or sandwiches!",
-        details: "A delightful and savory treat that brings together tender, juicy chicken with a rich blend of bold spices and tangy goodness. Carefully crafted to preserve the natural flavors of the chicken, this pickle is a perfect balance of heat, acidity, and earthy spices — a true celebration of culinary craftsmanship. Each jar delivers a mouthwatering combination of juicy chicken pieces marinated in a blend of aromatic spices and a tangy, flavorful base. The result is a pickle that's both hearty and zesty, offering a deliciously unique twist on the classic chicken flavor.savory delight with tender chicken, bold spices, and tangy flavors. Perfect with rice, parathas, or sandwiches!"
+        description: "A savory delight with tender chicken, bold spices, and tangy flavors. Perfect with rice, parathas, or sandwiches!"
     },
     {
         id: 6,
-        category: "Non-Veg",
+        category: "nveg",
         image: "assets/images/nveg/squid.jpg",
         title: "Squid Pickle",
-        description: "A bold coastal delicacy with tender squid, rich spices, and tangy flavors. Perfect with rice, chapatis, or any meal!",
-        details: "A Dive into the bold and exotic flavors of the coast with our Squid Pickle. This unique delicacy is crafted using tender squid, marinated in a medley of aromatic spices and traditional coastal seasonings. Every bite bursts with the rich, tangy, and spicy flavors that define seafood cuisine, perfectly balanced to bring out the natural sweetness of the squid. Slow-cooked and carefully preserved, this pickle is a true testament to the artistry of coastal culinary traditions."
+        description: "A bold coastal delicacy with tender squid, rich spices, and tangy flavors. Perfect with rice, chapatis, or any meal!"
     },
     {
         id: 7,
-        category: "Veg",
+        category: "veg",
         image: "assets/images/veg/dates.jpg",
         title: "Dates Pickle",
-        description: "A unique fusion of sweet dates, tangy spices, and bold flavors. Perfect with flatbreads, rice, or biriyani platters!",
-        details: "Introducing Dates Pickle, a sweet and tangy delight that combines the natural richness of dates with a medley of aromatic spices and a hint of tanginess. This pickle is a unique blend of flavors, where the luscious sweetness of dates is perfectly balanced by zesty and spicy notes, creating a taste that’s both exotic and unforgettable. Carefully crafted to preserve the natural goodness of dates, each jar is a testament to the art of pickling, offering a truly versatile condiment that enhances any meal."
+        description: "A unique fusion of sweet dates, tangy spices, and bold flavors. Perfect with flatbreads, rice, or biriyani platters!"
     },
     {
         id: 8,
-        category: "Veg",
+        category: "veg",
         image: "assets/images/veg/dates-lemon.jpg",
         title: "Lime Dates Pickle",
-        description: "A perfect blend of tangy limes, sweet dates, and rich spices. Ideal with biryanis, parathas, or any meal!",
-        details: "Introducing Lime Dates Pickle, a unique blend of tangy limes and sweet dates, brought together with a rich mix of spices to create an extraordinary flavor experience. This pickle is a delightful balance of zesty citrus, natural sweetness, and warm spices, making it an irresistible addition to your meals. Each jar captures the perfect harmony of bold and contrasting flavors, crafted with care to ensure every bite is a burst of deliciousness."
+        description: "A perfect blend of tangy limes, sweet dates, and rich spices. Ideal with biryanis, parathas, or any meal!"
     },
     {
         id: 9,
-        category: "Veg",
+        category: "veg",
         image: "assets/images/veg/yellow-lemons.jpg",
         title: "Lemon Pickle",
-        description: "A zesty blend of fresh lemons and aromatic spices. Perfect with rice, parathas, dosas, or any meal!",
-        details: "Introducing Lime Dates Pickle, a unique blend of tangy limes and sweet dates, brought together with a rich mix of spices to create an extraordinary flavor experience. This pickle is a delightful balance of zesty citrus, natural sweetness, and warm spices, making it an irresistible addition to your meals. Each jar captures the perfect harmony of bold and contrasting flavors, crafted with care to ensure every bite is a burst of deliciousness."
+        description: "A zesty blend of fresh lemons and aromatic spices. Perfect with rice, parathas, dosas, or any meal!"
     },
     {
         id: 10,
-        category: "Veg",
+        category: "veg",
         image: "assets/images/veg/fresh-green-mango.jpg",
         title: "Cut Mango Pickle",
-        description: "Tangy raw mangoes infused with bold spices. Perfect with rice, rotis, parathas, or as a zesty side!",
-        details: "Introducing Cut Mango Pickle, a classic and flavorful delicacy that combines the sharp, tangy essence of raw mangoes with a burst of aromatic spices. Made from carefully cut mango pieces, this pickle delivers a perfect balance of tartness, spice, and warmth, making it a favorite in many homes. Each jar is a delightful mix of crunchy mango pieces marinated in a blend of mustard, fenugreek, and other traditional spices, creating a pickle that is as bold as it is flavorful. The rich spices enhance the natural tartness of the mangoes, offering a tangy and satisfying experience with every bite."
+        description: "Tangy raw mangoes infused with bold spices. Perfect with rice, rotis, parathas, or as a zesty side!"
     },
     {
         id: 11,
-        category: "Veg",
+        category: "veg",
         image: "assets/images/veg/chilly.jpg",
         title: "Chilly Pickle",
-        description: "Spicy, tangy, and bold! Made with fresh chilies and aromatic spices, perfect for adding heat to any meal.",
-        details: "Introducing Chilly Pickle, a fiery and flavorful condiment that’s sure to ignite your taste buds. Crafted with the finest, handpicked chilies and a blend of aromatic spices, this pickle offers the perfect balance of heat, tang, and spice for lovers of bold and vibrant flavors. Every jar is a celebration of the natural zest and pungency of chilies, carefully preserved to bring you a condiment that pairs perfectly with a wide variety of dishes."
+        description: "Spicy, tangy, and bold! Made with fresh chilies and aromatic spices, perfect for adding heat to any meal."
     },
     {
         id: 12,
-        category: "Veg",
+        category: "veg",
         image: "assets/images/veg/green-gooseberries-wooden-bowl.jpg",
         title: "Gooseberry Pickle",
-        description: "A tangy, spicy delight! Made with fresh gooseberries and aromatic spices, perfect for adding bold flavor to any meal.",
-        details: "Introducing Gooseberry Pickle, a tangy and flavorful delicacy that celebrates the natural goodness of fresh, plump gooseberries. This traditional treat combines the tartness of gooseberries with a harmonious blend of spices, creating a pickle that's bursting with vibrant flavors. Each bite offers a perfect balance of sour, spicy, and savory notes, making it a delightful addition to any meal. Meticulously prepared using time-honored techniques, our Gooseberry Pickle captures the essence of tradition in every jar."
+        description: "A tangy, spicy delight! Made with fresh gooseberries and aromatic spices, perfect for adding bold flavor to any meal."
     },
     {
         id: 13,
-        category: "Veg",
+        category: "veg",
         image: "assets/images/veg/Ivygourd.jpg",
         title: "Ivygourd Pickle",
-        description: "",
-        details: "A tangy, spicy delight! Made with fresh ivygourd and aromatic spices, perfect for adding bold flavor to any meal."
+        description: "A tangy, spicy delight! Made with fresh ivygourd and aromatic spices, perfect for adding bold flavor to any meal."
     },
     {
         id: 14,
-        category: "Veg",
+        category: "veg",
         image: "assets/images/veg/bitter-gourd.jpg",
         title: "Bittergourd Pickle",
-        description: "A bold, tangy delight made with fresh bitter gourd, aromatic spices, and no artificial preservatives.",
-        details: "A zesty and aromatic delight crafted to perfection. Made from fresh, tender ivy gourds, this traditional pickle brings together the natural crunch of ivygourd with a rich blend of spices, creating a bold and irresistible flavor. Each bite delivers a tantalizing mix of tangy, spicy, and savory notes, making it a perfect complement to any meal. Carefully prepared using authentic techniques, our Ivygourd Pickle captures the true essence of homemade goodness in every jar."
+        description: "A bold, tangy delight made with fresh bitter gourd, aromatic spices, and no artificial preservatives."
+    },
+    {
+        id: 15,
+        category: "veg",
+        image: "assets/images/veg/puliyinji.jpg",
+        title: "Puliyinji",
+        description: "A zesty Kerala classic made with ginger, tamarind, jaggery, and spices—bursting with sweet, sour, and spicy notes, without any artificial additives."
+    },
+    {
+        id: 16, 
+        category: "veg",
+        image: "assets/images/veg/soya-chunks.jpg",
+        title: "Soya Chunks Pickle",
+        description: "A hearty, flavorful pickle made with protein-rich soya chunks, traditional Kerala spices, and zero artificial preservatives—perfectly balanced with tang and heat."
+    },
+    {
+        id: 17,
+        category: "nveg",
+        image: "assets/images/veg/pork.jpg",
+        title: "Pork Pickle",
+        description: "A rich, fiery indulgence made with tender pork chunks, slow-cooked in authentic Kerala spices—preservative-free and packed with bold, meaty flavor."
+    },
+    {
+        id: 18,
+        category: "veg",
+        image: "assets/images/veg/chutney-powder.jpg",
+        title: "Chutney Powder",
+        description: "A flavorful dry blend of roasted lentils, spices, and chillies—perfect with idlis, dosas, or rice with desi ghee, and made without any artificial preservatives."
     }
 ];
 
-// Data for testimonials  
+// Data for testimonials
 const testimonials = [
     {
         id: 1,
@@ -346,6 +371,39 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+// WhatsApp Button Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the WhatsApp button element
+    const whatsappBtn = document.querySelector('.whatsapp-btn');
+    
+    if (whatsappBtn) {
+        // Add bounce animation when the page loads
+        setTimeout(function() {
+            whatsappBtn.classList.add('bounce');
+            
+            setTimeout(function() {
+                whatsappBtn.classList.remove('bounce');
+            }, 1000);
+        }, 2000);
+    }
+});
+
+// Add bounce animation class
+if (!document.querySelector('style.whatsapp-bounce-style')) {
+    const style = document.createElement('style');
+    style.className = 'whatsapp-bounce-style';
+    style.textContent = `
+        .bounce {
+            animation: bounce 0.5s;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    `;
+    document.head.appendChild(style);
+}
 
 // API key for OpenWeatherMap
 const API_KEY = '11aaa3b5239ed56a389edd3f1c12c3a0';
@@ -724,59 +782,4 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Update date every minute
     setInterval(updateDate, 60 * 1000);
-});
-
-  function createProductItems(products) {
-    const productContainer = document.getElementById('product-list');
-    products.forEach(product => {
-        const productItem = document.createElement('div');
-        productItem.className = 'product-item';
-        
-        // Create anchor tag for product item
-        const productLink = document.createElement('a');
-        productLink.href = 'product-detail.html?id=' + encodeURIComponent(productItem.id);
-
-
-        productLink.onclick = () => showProductDetail(product.id);
-
-
-        
-        // Populate product details
-        productLink.innerHTML = `
-            <h3>${product.title}</h3>
-            <img src="${product.image}" alt="${product.title}">
-            <p>${product.description}</p>
-            <span>${product.price}</span>
-        `;
-        
-        productItem.appendChild(productLink);
-        productContainer.appendChild(productItem);
-    });
-}
-
-function showProductDetail(productId) {
-    // Logic to retrieve and display product details
-    const productDetailSection = document.getElementById('product-detail');
-    const product = getProductById(productId); // Assume this function retrieves product details
-    productDetailSection.innerHTML = `
-        <h2>${product.title}</h2>
-        <img src="${product.image}" alt="${product.title}">
-        <p>${product.description}</p>
-        <span>${product.price}</span>
-        <button onclick="closeProductDetail()">Close</button>
-    `;
-    productDetailSection.style.display = 'block';
-    document.getElementById('product-list').style.display = 'none';
-}
-
-function closeProductDetail() {
-    document.getElementById('product-detail').style.display = 'none';
-    document.getElementById('product-list').style.display = 'block';
-}
-
-// Event listener for hash changes
-window.addEventListener('hashchange', function() {
-    if (location.hash === '#product-detail') {
-        // Logic to handle navigation to product detail
-    }
 });
