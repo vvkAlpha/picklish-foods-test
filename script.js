@@ -21,7 +21,8 @@ const productItems = [
         category: "nveg",
         image: "assets/images/nveg/buff-slices-raw-meat.jpg",
         title: "Buffalo Pickle",
-        description: "A bold, tangy delight featuring tender buffalo meat, aromatic spices, and rich flavors. Perfect with rice or parathas!"
+        description: "A bold, tangy delight featuring tender buffalo meat, aromatic spices, and rich flavors. Perfect with rice or parathas!",
+        price: "Rs 1.5/gm"
     },
     {
         id: 2,
