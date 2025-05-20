@@ -150,7 +150,7 @@ const productItems = [
         image: "assets/images/nveg/pork.jpg",
         title: "Pork Pickle",
         description: "A rich, fiery indulgence made with tender pork chunks, slow-cooked in authentic Kerala spices—preservative-free and packed with bold, meaty flavor.",
-        price: "Price : ₹ 0.25/gm",
+        price: "Price : ₹ 2.5/gm",
         code: "PFNC011"
     },
     {
