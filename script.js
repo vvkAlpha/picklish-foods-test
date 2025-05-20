@@ -789,13 +789,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeButton = document.getElementById('close-banner');
     const announcementButton = document.getElementById('announcement-button');
   
+    // Check if banner was previously closed
+    if (localStorage.getItem('bannerClosed') === 'true') {
+      banner.classList.add('hidden');
+    }
+  
     // Close banner
     closeButton.addEventListener('click', () => {
       banner.classList.add('hidden');
+      localStorage.setItem('bannerClosed', 'true');
     });
   
     // Reopen banner
     announcementButton.addEventListener('click', () => {
       banner.classList.remove('hidden');
+      localStorage.setItem('bannerClosed', 'false');
     });
   });
