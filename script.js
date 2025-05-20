@@ -213,6 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="product-icon">${product.icon}</div>
                 <h3>${product.title}</h3>
                 <p>${product.description}</p>
+                <p>${product.price}</p>
             `;
             productsContainer.appendChild(productCard);
         });
@@ -229,6 +230,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="product-overlay">
                     <h3>${item.title}</h3>
                     <p>${item.description}</p>
+                    <p>${product.price}</p>
                 </div>
             `;
             productContainer.appendChild(productItem);
