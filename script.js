@@ -783,3 +783,19 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update date every minute
     setInterval(updateDate, 60 * 1000);
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const banner = document.getElementById('announcement-banner');
+    const closeButton = document.getElementById('close-banner');
+    const announcementButton = document.getElementById('announcement-button');
+  
+    // Close banner
+    closeButton.addEventListener('click', () => {
+      banner.classList.add('hidden');
+    });
+  
+    // Reopen banner
+    announcementButton.addEventListener('click', () => {
+      banner.classList.remove('hidden');
+    });
+  });
