@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="product-overlay">
                     <h3>${item.title}</h3>
                     <p>${item.description}</p>
-                    <p>${product.price}</p>
+                    <p>${item.price}</p>
                 </div>
             `;
             productContainer.appendChild(productItem);
